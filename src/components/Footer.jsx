@@ -1,4 +1,4 @@
-import { Code, Mail, User } from 'lucide-react';
+import { Mail, Github, Linkedin } from 'lucide-react';
 
 // Footer Component
 function Footer() {
@@ -21,7 +21,7 @@ function Footer() {
                             className="p-3 rounded-lg bg-accent-soft hover:bg-accent text-secondary hover:text-white transition-all duration-300 hover-lift"
                             aria-label="GitHub"
                         >
-                            <Code size={20} />
+                            <Github size={20} className="text-accent" />
                         </a>
                         <a 
                             href="https://linkedin.com/in/ian-ku-yi-sien/" 
@@ -30,14 +30,14 @@ function Footer() {
                             className="p-3 rounded-lg bg-accent-soft hover:bg-accent text-secondary hover:text-white transition-all duration-300 hover-lift"
                             aria-label="LinkedIn"
                         >
-                            <User size={20} />
+                            <Linkedin size={20} className="text-accent" />
                         </a>
                         <a 
                             href="mailto:iankuyisien@gmail.com" 
                             className="p-3 rounded-lg bg-accent-soft hover:bg-accent text-secondary hover:text-white transition-all duration-300 hover-lift"
                             aria-label="Email"
                         >
-                            <Mail size={20} />
+                            <Mail size={20} className="text-accent" />
                         </a>
                     </div>
                 </div>
