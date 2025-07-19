@@ -1,0 +1,573 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Custom CSS Variables for Dark Theme */
+:root {
+  /* Dark Theme Colors */
+  --color-primary: #0a0a0a;
+  --color-secondary: #1a1a1a;
+  --color-tertiary: #2a2a2a;
+  --color-accent: #00d4ff;
+  --color-accent-light: #33e0ff;
+  --color-accent-dark: #0099cc;
+  --color-purple: #a855f7;
+  --color-purple-light: #c084fc;
+  --color-green: #10b981;
+  --color-green-light: #34d399;
+  
+  /* Text Colors */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #e5e7eb;
+  --color-text-muted: #9ca3af;
+  --color-text-accent: #00d4ff;
+  
+  /* Background Colors */
+  --color-bg-primary: #0a0a0a;
+  --color-bg-secondary: #111111;
+  --color-bg-tertiary: #1a1a1a;
+  --color-bg-glass: rgba(255, 255, 255, 0.03);
+  --color-bg-glass-hover: rgba(255, 255, 255, 0.06);
+  --color-bg-accent: rgba(0, 212, 255, 0.05);
+  
+  /* Border Colors */
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-light: rgba(255, 255, 255, 0.04);
+  --color-border-accent: rgba(0, 212, 255, 0.2);
+  
+  /* Shadows */
+  --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --shadow-glass-hover: 0 16px 48px rgba(0, 0, 0, 0.4);
+  --shadow-accent: 0 8px 32px rgba(0, 212, 255, 0.15);
+}
+
+/* Global Styles */
+* {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+}
+
+/* Enhanced coding font with personality */
+.font-code {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Dark theme body */
+body {
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  min-height: 100vh;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom utilities */
+@layer utilities {
+  /* Container and overflow fixes */
+  .safe-container {
+    overflow: hidden;
+    position: relative;
+    isolation: isolate;
+    /* Firefox-specific fixes */
+    contain: layout style paint;
+    will-change: transform;
+  }
+  
+  .safe-background {
+    overflow: hidden;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    /* Firefox-specific containment */
+    contain: layout style paint;
+    transform: translateZ(0);
+  }
+  
+  .safe-content {
+    position: relative;
+    z-index: 10;
+    /* Firefox isolation fix */
+    transform: translateZ(0);
+  }
+  
+  /* Enhanced dark theme utilities */
+  .text-primary {
+    color: var(--color-text-primary);
+  }
+  
+  .text-secondary {
+    color: var(--color-text-secondary);
+  }
+  
+  .text-accent {
+    color: var(--color-text-accent);
+  }
+  
+  .text-accent-light {
+    color: var(--color-accent-light);
+  }
+  
+  .text-muted {
+    color: var(--color-text-muted);
+  }
+  
+  .text-purple {
+    color: var(--color-purple);
+  }
+  
+  .text-green {
+    color: var(--color-green);
+  }
+  
+  .bg-primary {
+    background-color: var(--color-bg-primary);
+  }
+  
+  .bg-secondary {
+    background-color: var(--color-bg-secondary);
+  }
+  
+  .bg-tertiary {
+    background-color: var(--color-bg-tertiary);
+  }
+  
+  .bg-glass {
+    background: var(--color-bg-glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--color-border);
+  }
+  
+  .bg-glass-hover {
+    background: var(--color-bg-glass-hover);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--color-border-accent);
+  }
+  
+  .bg-accent-soft {
+    background-color: var(--color-bg-accent);
+  }
+  
+  .bg-accent {
+    background-color: var(--color-accent);
+  }
+  
+  .bg-purple {
+    background-color: var(--color-purple);
+  }
+  
+  .bg-green {
+    background-color: var(--color-green);
+  }
+  
+  .border-soft {
+    border-color: var(--color-border);
+  }
+  
+  .border-light {
+    border-color: var(--color-border-light);
+  }
+  
+  .border-accent {
+    border-color: var(--color-border-accent);
+  }
+  
+  /* Typography improvements */
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Firefox-specific animation fixes */
+  .float {
+    /* Force hardware acceleration in Firefox */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+  
+  .pulse-accent {
+    /* Firefox containment for pulsing elements */
+    transform: translateZ(0);
+    contain: layout style paint;
+  }
+  
+  /* Firefox blur containment */
+  .blur-3xl, .blur-2xl {
+    /* Prevent blur bleeding in Firefox */
+    transform: translateZ(0);
+    will-change: transform, filter;
+  }
+  
+  /* Enhanced gradients with dark theme */
+  .gradient-primary {
+    background: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
+  }
+  
+  .gradient-glass {
+    background: linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.02) 0%, 
+      rgba(255, 255, 255, 0.05) 50%, 
+      rgba(0, 212, 255, 0.02) 100%);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .gradient-accent {
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
+  }
+  
+  .gradient-purple {
+    background: linear-gradient(135deg, var(--color-purple) 0%, var(--color-purple-light) 100%);
+  }
+  
+  .gradient-text {
+    background: linear-gradient(135deg, var(--color-accent), var(--color-purple), var(--color-green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Gradient from/to classes */
+  .from-accent {
+    --tw-gradient-from: var(--color-accent);
+    --tw-gradient-to: transparent;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  }
+  
+  .from-purple {
+    --tw-gradient-from: var(--color-purple);
+    --tw-gradient-to: transparent;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  }
+  
+  .from-green {
+    --tw-gradient-from: var(--color-green);
+    --tw-gradient-to: transparent;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  }
+  
+  .to-accent {
+    --tw-gradient-to: var(--color-accent);
+  }
+  
+  .to-purple {
+    --tw-gradient-to: var(--color-purple);
+  }
+  
+  .to-purple-light {
+    --tw-gradient-to: var(--color-purple-light);
+  }
+  
+  .to-green {
+    --tw-gradient-to: var(--color-green);
+  }
+  
+  /* Liquid glass effects */
+  .liquid-glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    box-shadow: var(--shadow-glass);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .liquid-glass:hover {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    box-shadow: var(--shadow-glass-hover), var(--shadow-accent);
+    transform: translateY(-4px) scale(1.02);
+  }
+  
+  /* Enhanced animations and interactions */
+  .hover-lift {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: var(--shadow-glass-hover);
+  }
+  
+  .hover-glow {
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  
+  .hover-glow:hover {
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+  }
+  
+  .hover-glass {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .hover-glass:hover {
+    background: var(--color-bg-glass-hover);
+    backdrop-filter: blur(12px);
+    border-color: var(--color-border-accent);
+  }
+  
+  /* Pulse animation for accents */
+  .pulse-accent {
+    animation: pulse-accent 2s infinite;
+  }
+  
+  @keyframes pulse-accent {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.05);
+    }
+  }
+  
+  /* Floating animation */
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  /* Starfield animations */
+  @keyframes starfield {
+    0% {
+      transform: translateX(-500px);
+    }
+    100% {
+      transform: translateX(100vw);
+    }
+  }
+  
+  @keyframes starfield-fast {
+    0% {
+      transform: translateX(-480px);
+    }
+    100% {
+      transform: translateX(100vw);
+    }
+  }
+  
+  @keyframes starfield-slow {
+    0% {
+      transform: translateX(-520px);
+    }
+    100% {
+      transform: translateX(100vw);
+    }
+  }
+  
+  @keyframes starfield-micro {
+    0% {
+      transform: translateX(-460px);
+    }
+    100% {
+      transform: translateX(100vw);
+    }
+  }
+  
+  @keyframes twinkle {
+    0% {
+      opacity: 0.3;
+    }
+    100% {
+      opacity: 0.8;
+    }
+  }
+  
+  /* Enhanced card styling with liquid glass */
+  .card-modern {
+    background: var(--color-bg-glass);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    box-shadow: var(--shadow-glass);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .card-modern:hover {
+    background: var(--color-bg-glass-hover);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--color-border-accent);
+    box-shadow: var(--shadow-glass-hover), var(--shadow-accent);
+    transform: translateY(-4px) scale(1.01);
+  }
+  
+  /* Enhanced button styles */
+  .btn-primary {
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
+    color: var(--color-primary);
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .btn-primary:hover {
+    background: linear-gradient(135deg, var(--color-accent-light), var(--color-accent));
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+  }
+  
+  .btn-secondary {
+    background: var(--color-bg-glass);
+    backdrop-filter: blur(10px);
+    color: var(--color-text-accent);
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: 1px solid var(--color-border-accent);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .btn-secondary:hover {
+    background: var(--color-bg-glass-hover);
+    backdrop-filter: blur(15px);
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.15);
+  }
+  
+  /* Neon glow effect */
+  .neon-glow {
+    box-shadow: 0 0 5px var(--color-accent), 0 0 20px var(--color-accent), 0 0 35px var(--color-accent);
+  }
+  
+  /* Glass morphism utility */
+  .glass-morph {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Add shiny and pixelated styles for S-tier */
+.shiny-pixelated.s-tier {
+    font-family: 'Pixelify Sans', monospace !important;
+    font-size: 18px !important; /* Consistent size */
+    font-weight: 700 !important;
+    background: linear-gradient(90deg, #ffd700, #ffed4e, #fff700, #ffd700) !important; /* Gold gradient for S-tier */
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    background-size: 200% !important;
+    animation: shiny-effect-s 2s linear infinite !important;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.8) !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* Add shiny and pixelated styles for A-tier */
+.shiny-pixelated.a-tier {
+    font-family: 'Pixelify Sans', monospace !important;
+    font-size: 18px !important; /* Consistent size */
+    font-weight: 700 !important;
+    background: linear-gradient(90deg, #ff6b6b, #ff8e8e, #ffa8a8, #ff6b6b) !important; /* Red gradient for A-tier */
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    background-size: 200% !important;
+    animation: shiny-effect-a 2.5s linear infinite !important;
+    text-shadow: 0 0 12px rgba(255, 107, 107, 0.6) !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* Fallback for general shiny-pixelated */
+.shiny-pixelated {
+    font-family: 'Pixelify Sans', monospace !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.5px !important;
+}
+
+@keyframes shiny-effect-s {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes shiny-effect-a {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes shiny-effect {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 200%;
+    }
+}
+
+/* Ensure the font is pixelated */
+body {
+    font-smooth: never;
+    -webkit-font-smoothing: none;
+}
