@@ -24,7 +24,7 @@ function Footer() {
                             <Code size={20} />
                         </a>
                         <a 
-                            href="https://linkedin.com/ian-ku-yi-sien" 
+                            href="https://linkedin.com/in/ian-ku-yi-sien/" 
                             target="_blank" 
                             rel="noopener noreferrer" 
                             className="p-3 rounded-lg bg-accent-soft hover:bg-accent text-secondary hover:text-white transition-all duration-300 hover-lift"
