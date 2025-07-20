@@ -121,8 +121,27 @@ function Hero({ isLoaded }) {
                 </div>
                 <div className={`md:w-1/2 flex justify-center ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
                     <div className="relative">
-                        <div className="w-72 h-72 black-hole hover-glow float overflow-hidden">
-                            <div className="w-full h-full rounded-full bg-gradient-to-br from-gray-900 to-black flex items-center justify-center p-1">
+                        {/* Gravitational lensing effect background */}
+                        <div className="absolute inset-0 w-96 h-96 -translate-x-12 -translate-y-12 gravitational-lens overflow-hidden">
+                            {/* Warped starfield that bends around the black hole */}
+                            <div className="absolute inset-0" style={{
+                                background: `
+                                    radial-gradient(1px 1px at 23px 67px, rgba(0, 212, 255, 0.6), transparent),
+                                    radial-gradient(2px 2px at 89px 34px, rgba(168, 85, 247, 0.5), transparent),
+                                    radial-gradient(1px 1px at 156px 91px, rgba(16, 185, 129, 0.6), transparent),
+                                    radial-gradient(2px 2px at 234px 12px, rgba(0, 212, 255, 0.4), transparent),
+                                    radial-gradient(1px 1px at 312px 78px, rgba(168, 85, 247, 0.7), transparent),
+                                    radial-gradient(1px 1px at 378px 45px, rgba(16, 185, 129, 0.3), transparent)
+                                `,
+                                backgroundSize: '400px 150px',
+                                animation: 'lens-warp 20s linear infinite',
+                                filter: 'blur(0.5px)',
+                                transform: 'perspective(500px) rotateX(15deg)'
+                            }}></div>
+                        </div>
+                        
+                        <div className="w-72 h-72 black-hole hover-glow float overflow-hidden relative z-10">
+                            <div className="w-full h-full rounded-full bg-gradient-to-br from-gray-900 to-black flex items-center justify-center">
                                 <img src="/ianku/Ian_KU_hs.jpg" alt="Ian Ku" className="w-full h-full object-cover rounded-full" />
                             </div>
                         </div>

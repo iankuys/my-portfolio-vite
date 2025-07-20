@@ -336,41 +336,30 @@ html {
     position: relative;
     border-radius: 50%;
     background: radial-gradient(circle at center, 
-      rgba(0, 0, 0, 0.9) 0%, 
-      rgba(20, 20, 20, 0.8) 30%, 
-      rgba(40, 40, 40, 0.6) 50%,
-      rgba(60, 60, 60, 0.4) 70%,
-      rgba(80, 80, 80, 0.2) 85%,
+      rgba(0, 0, 0, 1) 0%, 
+      rgba(5, 5, 5, 0.95) 20%, 
+      rgba(15, 15, 15, 0.8) 40%,
+      rgba(30, 30, 30, 0.6) 60%,
+      rgba(50, 50, 50, 0.3) 75%,
+      rgba(80, 80, 80, 0.1) 85%,
       transparent 100%
     );
     box-shadow: 
-      inset 0 0 50px rgba(0, 0, 0, 0.8),
-      inset 0 0 100px rgba(0, 0, 0, 0.6),
-      0 0 50px rgba(0, 0, 0, 0.8),
-      0 0 100px rgba(0, 0, 0, 0.4),
+      /* Inner event horizon - complete darkness */
+      inset 0 0 30px rgba(0, 0, 0, 1),
+      inset 0 0 60px rgba(0, 0, 0, 0.9),
+      inset 0 0 100px rgba(0, 0, 0, 0.8),
+      /* Light absorption effect */
+      0 0 40px rgba(0, 0, 0, 0.9),
+      0 0 80px rgba(0, 0, 0, 0.7),
+      0 0 120px rgba(0, 0, 0, 0.5),
+      0 0 160px rgba(0, 0, 0, 0.3),
       0 0 200px rgba(0, 0, 0, 0.2);
     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: contrast(1.2) brightness(0.8);
   }
 
   .black-hole::before {
-    content: '';
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
-    border-radius: 50%;
-    background: radial-gradient(circle at center,
-      transparent 0%,
-      rgba(100, 100, 100, 0.05) 70%,
-      rgba(150, 150, 150, 0.1) 85%,
-      rgba(100, 100, 100, 0.05) 95%,
-      transparent 100%
-    );
-    z-index: -1;
-  }
-
-  .black-hole::after {
     content: '';
     position: absolute;
     top: -20px;
@@ -379,29 +368,109 @@ html {
     bottom: -20px;
     border-radius: 50%;
     background: radial-gradient(circle at center,
-      transparent 60%,
-      rgba(80, 80, 80, 0.1) 70%,
+      transparent 0%,
+      rgba(40, 40, 40, 0.1) 60%,
+      rgba(80, 80, 80, 0.15) 70%,
       rgba(120, 120, 120, 0.2) 80%,
       rgba(80, 80, 80, 0.1) 90%,
       transparent 100%
     );
+    z-index: -1;
+  }
+
+  .black-hole::after {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    right: -30px;
+    bottom: -30px;
+    border-radius: 50%;
+    background: radial-gradient(circle at center,
+      transparent 50%,
+      rgba(60, 60, 60, 0.05) 65%,
+      rgba(100, 100, 100, 0.1) 75%,
+      rgba(140, 140, 140, 0.15) 85%,
+      rgba(100, 100, 100, 0.08) 95%,
+      transparent 100%
+    );
     animation: black-hole-pulse 4s ease-in-out infinite alternate;
     z-index: -2;
+    filter: blur(2px);
   }
 
   .black-hole:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
     box-shadow: 
-      inset 0 0 80px rgba(0, 0, 0, 0.9),
-      inset 0 0 150px rgba(0, 0, 0, 0.7),
-      0 0 80px rgba(0, 0, 0, 0.9),
-      0 0 150px rgba(0, 0, 0, 0.5),
+      /* Stronger event horizon on hover */
+      inset 0 0 40px rgba(0, 0, 0, 1),
+      inset 0 0 80px rgba(0, 0, 0, 0.95),
+      inset 0 0 120px rgba(0, 0, 0, 0.9),
+      /* Intensified light absorption */
+      0 0 60px rgba(0, 0, 0, 0.95),
+      0 0 120px rgba(0, 0, 0, 0.8),
+      0 0 180px rgba(0, 0, 0, 0.6),
+      0 0 240px rgba(0, 0, 0, 0.4),
       0 0 300px rgba(0, 0, 0, 0.3);
+    filter: contrast(1.3) brightness(0.7);
   }
 
   @keyframes black-hole-pulse {
     0% { opacity: 0.3; transform: scale(1); }
     100% { opacity: 0.6; transform: scale(1.1); }
+  }
+
+  /* Gravitational lensing effect */
+  .gravitational-lens {
+    border-radius: 50%;
+    background: radial-gradient(circle at center,
+      transparent 30%,
+      rgba(255, 255, 255, 0.02) 40%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.01) 60%,
+      transparent 70%
+    );
+    filter: 
+      blur(1px) 
+      contrast(1.5) 
+      brightness(0.7)
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cfilter id='warp'%3E%3CfeTurbulence baseFrequency='0.02' numOctaves='3' result='noise'/%3E%3CfeDisplacementMap in='SourceGraphic' in2='noise' scale='8'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E#warp");
+    transform: perspective(800px) rotateX(10deg);
+    animation: gravitational-distortion 15s ease-in-out infinite;
+  }
+
+  @keyframes lens-warp {
+    0% { 
+      transform: perspective(500px) rotateX(15deg) rotateY(-5deg) scale(1); 
+      filter: blur(0.5px) brightness(0.8);
+    }
+    25% { 
+      transform: perspective(500px) rotateX(20deg) rotateY(0deg) scale(1.1); 
+      filter: blur(1px) brightness(0.6);
+    }
+    50% { 
+      transform: perspective(500px) rotateX(15deg) rotateY(5deg) scale(1.05); 
+      filter: blur(0.8px) brightness(0.7);
+    }
+    75% { 
+      transform: perspective(500px) rotateX(10deg) rotateY(0deg) scale(0.95); 
+      filter: blur(1.2px) brightness(0.5);
+    }
+    100% { 
+      transform: perspective(500px) rotateX(15deg) rotateY(-5deg) scale(1); 
+      filter: blur(0.5px) brightness(0.8);
+    }
+  }
+
+  @keyframes gravitational-distortion {
+    0%, 100% { 
+      transform: perspective(800px) rotateX(10deg) scale(1);
+      filter: blur(1px) contrast(1.5) brightness(0.7);
+    }
+    50% { 
+      transform: perspective(800px) rotateX(15deg) scale(1.02);
+      filter: blur(1.5px) contrast(1.8) brightness(0.5);
+    }
   }
   
   /* Enhanced animations and interactions */
