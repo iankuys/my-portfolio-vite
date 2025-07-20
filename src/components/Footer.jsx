@@ -10,7 +10,7 @@ function Footer() {
                 <div className="flex flex-col md:flex-row justify-between items-center">
                     <div className="mb-6 md:mb-0 text-center md:text-left">
                         <p className="text-xl font-semibold text-primary font-mono">Ian Ku<span className="text-accent">.</span></p>
-                        <p className="text-muted">Software & Cloud Engineer</p>
+                        <p className="text-muted">Software & DevOps Engineer</p>
                     </div>
 
                     <div className="flex space-x-6">
