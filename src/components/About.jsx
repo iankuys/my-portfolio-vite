@@ -93,7 +93,7 @@ function About() {
                             </div>
                             <div className="space-y-6 text-secondary leading-relaxed text-lg">
                                 <p className="transition-all duration-300 hover:text-primary">
-                                    I'm a <span className="text-accent font-semibold">software engineer</span>, gamer 🎮, and future founder 🚀 with <span className="text-green font-semibold">2+ years of experience</span> building fast, intuitive software that ships and scales.
+                                    I'm a <span className="text-accent font-semibold">software engineer</span>, gamer 🎮, and future founder 🚀 with <span className="text-green font-semibold">3+ years of experience</span> building fast, intuitive software that ships and scales.
                                 </p>
                                 <p className="transition-all duration-300 hover:text-primary">
                                     I’ve thrived in fast-moving startups where ownership is everything. I'm relentlessly driven, always leveling up in new tech, and pushing to grow as both an engineer and future leader.
