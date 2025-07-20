@@ -121,9 +121,9 @@ function Hero({ isLoaded }) {
                 </div>
                 <div className={`md:w-1/2 flex justify-center ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
                     <div className="relative">
-                        <div className="w-72 h-72 liquid-glass hover-glow float overflow-hidden">
-                            <div className="w-full h-full rounded-2xl bg-gradient-to-br from-accent to-purple-light flex items-center justify-center p-2">
-                                <img src="/ianku/Ian_KU_hs.jpg" alt="Ian Ku" className="w-full h-full object-cover rounded-xl" />
+                        <div className="w-72 h-72 black-hole hover-glow float overflow-hidden">
+                            <div className="w-full h-full rounded-full bg-gradient-to-br from-gray-900 to-black flex items-center justify-center p-1">
+                                <img src="/ianku/Ian_KU_hs.jpg" alt="Ian Ku" className="w-full h-full object-cover rounded-full" />
                             </div>
                         </div>
                     </div>
