@@ -189,7 +189,7 @@ function Experience() {
                             <div className="text-muted font-code text-sm">Years Experience</div>
                         </div>
                         <div className="liquid-glass p-6 text-center hover-glow">
-                            <div className="text-3xl font-bold text-purple mb-2">15+</div>
+                            <div className="text-3xl font-bold text-purple mb-2">10+</div>
                             <div className="text-muted font-code text-sm">Technologies Mastered</div>
                         </div>
                         <div className="liquid-glass p-6 text-center hover-glow">
