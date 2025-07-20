@@ -3,14 +3,14 @@ import { useState, useEffect, useMemo } from 'react';
 // About Section
 function About() {
     const skills = useMemo(() => [
-        { name: 'Python', level: 95 },
-        { name: 'JavaScript/TypeScript', level: 90 },
-        { name: 'React.js/Vue.js', level: 87 },
-        { name: 'AWS Cloud Services', level: 90 },
-        { name: 'Flask/FastAPI', level: 80 },
-        { name: 'DevOps', level: 85 },
-        { name: 'C++/C#', level: 75 },
-        { name: 'SQL', level: 80 },
+        { name: 'Python', level: 95, icon: '🐍' },
+        { name: 'JavaScript/TypeScript', level: 90, icon: '⚡' },
+        { name: 'React.js/Vue.js', level: 87, icon: '⚛️' },
+        { name: 'AWS Cloud Services', level: 90, icon: '☁️' },
+        { name: 'Flask/FastAPI', level: 80, icon: '🔥' },
+        { name: 'DevOps', level: 85, icon: '🚀' },
+        { name: 'C++/C#', level: 75, icon: '🔧' },
+        { name: 'SQL', level: 80, icon: '🗄️' },
     ], []);
 
     const [animated, setAnimated] = useState({});
@@ -62,7 +62,7 @@ function About() {
                 <div className="absolute bottom-20 right-20 w-80 h-80 bg-purple opacity-5 rounded-full blur-3xl float transform-gpu" style={{ animationDelay: '4s' }}></div>
                 <div className="absolute top-1/2 left-1/3 w-48 h-48 bg-accent opacity-3 rounded-full blur-2xl pulse-accent transform-gpu"></div>
             </div>
-            
+
             {/* Grid pattern overlay */}
             <div className="safe-background opacity-5">
                 <div className="absolute inset-0" style={{
@@ -93,16 +93,19 @@ function About() {
                             </div>
                             <div className="space-y-6 text-secondary leading-relaxed text-lg">
                                 <p className="transition-all duration-300 hover:text-primary">
-                                    I'm a <span className="text-accent font-semibold">full-stack software engineer</span>, gamer 🎮, and future founder 🚀 with <span className="text-green font-semibold">2+ years of experience</span> building fast, intuitive web apps that actually get used.
+                                    I'm a <span className="text-accent font-semibold">software engineer</span>, gamer 🎮, and future founder 🚀 with <span className="text-green font-semibold">2+ years of experience</span> building fast, intuitive software that ships and scales.
                                 </p>
                                 <p className="transition-all duration-300 hover:text-primary">
-                                    I thrive where <span className="text-purple font-semibold">clean code meets real-world impact</span>, constantly learning and deploying scalable cloud infrastructure ☁️ with <span className="text-accent font-semibold">AWS</span>. I love solving tough problems, especially ones at the intersection of UX, systems, and AI 🤖.
+                                    I’ve thrived in fast-moving startups where ownership is everything. I'm relentlessly driven, always leveling up in new tech, and pushing to grow as both an engineer and future leader.
                                 </p>
                                 <p className="transition-all duration-300 hover:text-primary">
-                                    Outside of work, I'm <span className="text-green font-semibold">top 1% in Counter Strike 2</span> 🧠, a die-hard basketball fan 🏀, and always down to connect with people who think big. Lately, I've been diving deep into <span className="text-purple font-semibold">AI workflows and prompt design</span> — shaping the future one experiment at a time.
+                                    Outside of work, I’m <span className="text-green font-semibold">top 1% in Counter-Strike 2</span> 🧠, an EDM head 🎧, and a dedicated gym rat 🏋️‍♂️.
+                                </p>
+                                <p className="transition-all duration-300 hover:text-primary">
+                                    I love connecting with people who think big. Lately, I’ve been deep in <span className="text-purple font-semibold">AI workflows and prompt design</span>, shaping what’s next, one build at a time.
                                 </p>
                                 <p className="text-accent font-semibold text-l mt-8 font-code">
-                                    Let's build something worth talking about.
+                                    Let’s build something that actually matters.
                                 </p>
                             </div>
                         </div>
@@ -119,8 +122,13 @@ function About() {
                                     const { tier, style } = getSkillTier(skill.level);
                                     return (
                                         <div key={skill.name} className="transition-all duration-500 hover:scale-105">
-                                            <div className="flex justify-between mb-2">
-                                                <span className="font-semibold text-primary text-base">{skill.name}</span>
+                                            <div className="flex justify-between items-center mb-2">
+                                                <div className="flex items-center gap-3">
+                                                    <span className="text-xl transition-transform duration-300 hover:scale-110">
+                                                        {skill.icon}
+                                                    </span>
+                                                    <span className="font-semibold text-primary text-base">{skill.name}</span>
+                                                </div>
                                                 <span className={`font-code text-xs bg-accent-soft px-2 py-1 rounded-full ${style}`}>
                                                     {tier}
                                                 </span>
@@ -140,7 +148,7 @@ function About() {
                                     );
                                 })}
                             </div>
-                            
+
                             {/* Certifications badge */}
                             <div className="mt-8 p-4 bg-glass rounded-xl border border-accent/20">
                                 <div className="flex items-center justify-center">
