@@ -2,22 +2,6 @@
 function Hero({ isLoaded }) {
     return (
         <section id="home" className="pt-32 pb-24 bg-primary safe-container">
-            {/* Floating Geometric Background */}
-            <div className="safe-background">
-                {/* Floating shapes - subtle and minimal */}
-                <div className="absolute top-20 left-12 w-3 h-3 bg-accent opacity-[0.06] rounded-full float-slow"></div>
-                <div className="absolute top-32 right-16 w-2 h-6 bg-accent opacity-[0.04] float-slower" style={{ borderRadius: '50%' }}></div>
-                <div className="absolute bottom-40 left-1/4 w-4 h-2 bg-accent opacity-[0.05] float-slow" style={{ borderRadius: '40% 60%' }}></div>
-                <div className="absolute top-1/2 right-20 w-2 h-2 bg-accent opacity-[0.04] float-slower" style={{ borderRadius: '30% 70% 70% 30%' }}></div>
-                <div className="absolute bottom-32 right-1/3 w-5 h-1 bg-accent opacity-[0.03] float-slow" style={{ borderRadius: '50%' }}></div>
-                <div className="absolute top-1/3 left-1/3 w-1 h-4 bg-accent opacity-[0.05] float-slower" style={{ borderRadius: '50%' }}></div>
-                
-                {/* More subtle floating shapes */}
-                <div className="absolute top-40 right-1/4 w-2 h-2 bg-amber opacity-[0.04] rounded-full float-slow" style={{ borderRadius: '60% 40%' }}></div>
-                <div className="absolute bottom-20 left-16 w-3 h-1 bg-accent opacity-[0.05] float-slower" style={{ borderRadius: '50%' }}></div>
-                <div className="absolute top-60 left-1/2 w-1 h-3 bg-amber opacity-[0.03] float-slow" style={{ borderRadius: '40%' }}></div>
-                <div className="absolute bottom-60 right-12 w-4 h-1 bg-accent opacity-[0.04] float-slower" style={{ borderRadius: '30% 70%' }}></div>
-            </div>
             
             {/* Twinkling effect overlay */}
             <div className="absolute inset-0 opacity-30" style={{
