@@ -50,7 +50,6 @@ function Hero({ isLoaded }) {
                 <div className={`md:w-1/2 flex justify-center ${isLoaded ? 'paper-drop paper-drop-delay-1' : 'opacity-0'}`}>
                     <div className="relative">
                         <div className="w-72 h-72 overflow-hidden relative border-4 border-accent" style={{ 
-                            borderRadius: '48% 52% 54% 46% / 45% 47% 53% 55%',
                             transform: 'rotate(-2deg)'
                         }}>
                             <img 
