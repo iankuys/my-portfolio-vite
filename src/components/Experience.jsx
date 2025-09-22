@@ -1,5 +1,17 @@
 import { useState, useEffect, useRef } from 'react';
 
+// Simple markdown parser for bold text
+function parseMarkdown(text) {
+    const parts = text.split(/(\*\*.*?\*\*)/);
+    return parts.map((part, index) => {
+        if (part.startsWith('**') && part.endsWith('**')) {
+            const boldText = part.slice(2, -2);
+            return <strong key={index} className="text-accent font-semibold">{boldText}</strong>;
+        }
+        return part;
+    });
+}
+
 function Experience() {
     const [visibleItems, setVisibleItems] = useState([]);
     const experienceRefs = useRef([]);
@@ -10,7 +22,7 @@ function Experience() {
             company: "Ulendo Technologies",
             location: "Ann Arbor, Michigan",
             period: "April 2024 - June 2025",
-            description: "Built a production-grade IoT dashboard in React.js with AWS Amplify to manage over 100+ manufacturing clients across North America. Developed a desktop app to optimize 3D print paths using Python (OpenCV, NumPy) and Electron.js, improving algorithm performance by 80% through OpenCV image-processing/image-downsampling techniques. Automated license delivery and deployment using GitHub Actions, Azure signing, AWS CloudFront, and EventBridge. Engineered ESP32 firmware with ESP-IDF (C++) to stream real-time thermal data over UART/I2C and deployed a resilient cloud pipeline using AWS IoT Core, Lambda, and SQS to handle thousands of device messages daily.",
+            description: "Built **production IoT dashboard** in React.js with AWS Amplify managing **100+ manufacturing clients**. Developed desktop app optimizing 3D print paths using Python/OpenCV, improving performance by **80%**. Automated license delivery via **GitHub Actions** and AWS services. Engineered **ESP32 firmware** streaming real-time thermal data through resilient cloud pipeline.",
             icon: <img src="/icons/ulendo.png" alt="Ulendo Technologies" className="w-full h-full object-contain" />,
             skills: ["React.js/Electron.js", "JavaScript", "Python", "AWS", "C++", "OpenCV", "ESP-IDF", "UART/I2C"]
         },
@@ -19,7 +31,7 @@ function Experience() {
             company: "UCI MIND",
             location: "Irvine, California",
             period: "November 2022 - March 2024",
-            description: "Developed a Dockerized patient analytics dashboard with Vue.js and Flask, improving data processing time by 40%. Built a standalone R Shiny app for Alzheimer’s tissue tracking integrated with REDCap, enabling streamlined data queries for researchers. Created a full-stack video survey platform using Bootstrap, FastAPI, and Flask for remote cognitive studies. Handled DevOps using Apache2 load balancing, Hyper-V, and Ansible for maintenance automation.",
+            description: "Developed **Dockerized patient analytics dashboard** with Vue.js and Flask, improving data processing time by **40%**. Built standalone **R Shiny app for Alzheimer's tissue tracking** integrated with REDCap. Created full-stack video survey platform for **remote cognitive studies**. Handled DevOps using **Apache2 load balancing** and Ansible automation.",
             icon: <img src="/icons/ucimind.jpg" alt="UCI MIND" className="w-full h-full object-contain" />,
             skills: ["Vue.js", "JavaScript", "Python", "R", "Flask", "FastAPI", "Docker", "Microsoft SQL"]
         },
@@ -28,7 +40,7 @@ function Experience() {
             company: "Ansys, Inc",
             location: "Remote, USA",
             period: "June 2023 - September 2023",
-            description: "Implemented a Python-based 3D meshing solution for an Apple PCB model using Ansys Mechanical API, reducing mesh generation time by 25%. Built C++ GUI tools and managed Git/Azure DevOps pipelines to support enterprise-scale releases. Improved simulation workflows by extending legacy features in C# and XML and stabilized internal builds through dependency restructuring.",
+            description: "Implemented **Python-based 3D meshing solution** for **Apple PCB model** using Ansys Mechanical API, reducing mesh generation time by **25%**. Built **C++ GUI tools** and managed Git/Azure DevOps pipelines for **enterprise-scale releases**. Improved simulation workflows and stabilized internal builds through dependency restructuring.",
             icon: <img src="/icons/ansys.png" alt="Ansys Inc" className="w-full h-full object-contain" />,
             skills: ["Python", "C++", "C#", "Ansys Mechanical", "Git", "Azure DevOps"]
         },
@@ -37,7 +49,7 @@ function Experience() {
             company: "Kheradvar Research Group (KLAB)",
             location: "Irvine, California",
             period: "July 2022 - March 2023",
-            description: "Built frontend features for a cardiac MRI segmentation platform using Vue.js and TypeScript. Engineered 2D/3D segmentation pipelines with OpenCV, PyVista, and AWS S3, improving visualization-rendering/image-processing. Delivered full-stack capabilities using FastAPI, optimized background geometry computations with Celery, and maintained schema control via Alembic.",
+            description: "Built frontend features for **cardiac MRI segmentation platform** using Vue.js and TypeScript. Engineered **2D/3D segmentation pipelines** with OpenCV, PyVista, and AWS S3. Delivered full-stack capabilities using **FastAPI**, optimized background geometry computations with **Celery**, and maintained schema control via Alembic.",
             icon: <img src="/icons/klab.png" alt="KLAB Research" className="w-full h-full object-contain" />,
             skills: ["Vue.js", "TypeScript", "Python", "AWS", "FastAPI", "OpenCV"]
         },
@@ -46,7 +58,7 @@ function Experience() {
             company: "N2N Connect Berhad",
             location: "Kuala Lumpur, Malaysia",
             period: "August 2020 - October 2020",
-            description: "Contributed to portfolio management software using C#, ASP.NET Core, and Entity Framework. Built a production-grade market data backend in PostgreSQL and automated data ingestion via Dockerized bash scripts. Streamlined FTP integration pipelines for live market feeds, improving sync reliability by over 50%, and denormalized tables to improve query performance for analytics and reporting.",
+            description: "Contributed to **portfolio management software** using C#, ASP.NET Core, and Entity Framework. Built **production-grade market data backend** in PostgreSQL and automated data ingestion via **Dockerized bash scripts**. Streamlined FTP integration pipelines for live market feeds, improving sync reliability by **over 50%**.",
             icon: <img src="/icons/n2n.png" alt="N2N Connect" className="w-full h-full object-contain" />,
             skills: ["C#", "ASP.NET Core", "Entity Framework", "PostgreSQL", "Docker", "Bash"]
         }
@@ -81,31 +93,20 @@ function Experience() {
     }, [experienceRefs, experiences.length, visibleItems]);
 
     return (
-        <section id="experience" className="py-24 bg-secondary safe-container">
-            {/* Contained animated background elements */}
+        <section id="experience" className="py-16 bg-alt safe-container">
+            {/* Subtle paper texture */}
             <div className="safe-background">
-                <div className="absolute top-20 left-20 w-64 h-64 bg-accent opacity-5 rounded-full blur-3xl float transform-gpu"></div>
-                <div className="absolute bottom-20 right-20 w-80 h-80 bg-purple opacity-5 rounded-full blur-3xl float transform-gpu" style={{ animationDelay: '3s' }}></div>
-                <div className="absolute top-1/2 right-1/4 w-48 h-48 bg-green opacity-3 rounded-full blur-2xl pulse-accent transform-gpu"></div>
-            </div>
-
-            {/* Grid pattern overlay */}
-            <div className="safe-background opacity-5">
-                <div className="absolute inset-0" style={{
-                    backgroundImage: `
-                        linear-gradient(rgba(168, 85, 247, 0.1) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(168, 85, 247, 0.1) 1px, transparent 1px)
-                    `,
-                    backgroundSize: '50px 50px'
-                }}></div>
+                <div className="absolute top-20 left-16 w-28 h-28 bg-accent opacity-[0.02] rounded-full wobble"></div>
+                <div className="absolute bottom-24 right-20 w-20 h-20 bg-green opacity-[0.03] rounded-full" style={{ transform: 'rotate(18deg)' }}></div>
+                <div className="absolute top-1/2 right-1/4 w-16 h-16 bg-amber opacity-[0.02] rounded-full" style={{ transform: 'rotate(-15deg)' }}></div>
             </div>
 
             <div className="container mx-auto px-4 safe-content">
-                <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary">
+                <div className="text-center mb-12">
+                    <h2 className="section-header font-bold mb-6 text-primary">
                         Work <span className="gradient-text">Experience</span>
                     </h2>
-                    <p className="text-muted text-md max-w-2xl mx-auto font-code">
+                    <p className="text-muted text-sm max-w-2xl mx-auto font-code">
                         {`// A journey through my professional growth and achievements`}
                     </p>
                 </div>
@@ -126,14 +127,14 @@ function Experience() {
                             >
                                 <div className="flex flex-col md:flex-row gap-8">
                                     <div className="md:w-16 flex justify-center md:justify-start relative z-10">
-                                        <div className={`w-16 h-16 liquid-glass hover-glow flex items-center justify-center p-3 transition-all duration-500 ${visibleItems.includes(index) ? 'scale-100' : 'scale-0'
+                                        <div className={`w-16 h-16 liquid-glass hover-sketch flex items-center justify-center p-3 transition-all duration-500 ${visibleItems.includes(index) ? 'scale-100' : 'scale-0'
                                             }`}>
                                             {exp.icon}
                                         </div>
                                     </div>
 
                                     <div className="flex-1">
-                                        <div className={`liquid-glass p-8 hover-glow transition-all duration-700 ${visibleItems.includes(index)
+                                        <div className={`liquid-glass p-8 hover-sketch transition-all duration-700 ${visibleItems.includes(index)
                                             ? 'opacity-100 translate-x-0'
                                             : 'opacity-0 -translate-x-6'
                                             }`}>
@@ -159,8 +160,8 @@ function Experience() {
                                                 </div>
                                             </div>
 
-                                            <p className="text-secondary leading-relaxed mb-6 text-base">
-                                                {exp.description}
+                                            <p className="text-secondary leading-relaxed mb-6 text-sm text-left">
+                                                {parseMarkdown(exp.description)}
                                             </p>
 
                                             {exp.skills && (

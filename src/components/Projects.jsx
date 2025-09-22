@@ -137,18 +137,18 @@ function Projects() {
     }, []);
 
     return (
-        <section id="projects" className="py-20 bg-secondary safe-container">
-            {/* Background decoration */}
+        <section id="projects" className="py-16 bg-secondary safe-container">
+            {/* Subtle paper texture */}
             <div className="safe-background">
-                <div className="absolute top-10 right-20 w-64 h-64 bg-purple opacity-5 rounded-full blur-3xl transform-gpu float" style={{ willChange: 'transform', backfaceVisibility: 'hidden' }}></div>
-                <div className="absolute bottom-20 left-20 w-80 h-80 bg-accent opacity-5 rounded-full blur-3xl transform-gpu float" style={{ willChange: 'transform', backfaceVisibility: 'hidden' }}></div>
+                <div className="absolute top-12 right-16 w-24 h-24 bg-accent opacity-[0.02] rounded-full wobble"></div>
+                <div className="absolute bottom-16 left-12 w-32 h-32 bg-green opacity-[0.03] rounded-full" style={{ transform: 'rotate(-12deg)' }}></div>
             </div>
             
             <div className="container mx-auto px-4 safe-content">
-                <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center text-primary">
+                <h2 className="section-header font-bold mb-6 text-center text-primary">
                     My <span className="gradient-text">Projects</span>
                 </h2>
-                <p className="text-center text-muted mb-12 font-code text-md">
+                <p className="text-center text-muted mb-10 font-code text-sm">
                     {`// Building innovative solutions with modern tech`}
                 </p>
 
@@ -156,7 +156,7 @@ function Projects() {
                     {projects.map((project, index) => (
                         <div
                             key={index}
-                            className="liquid-glass hover-glow transition-all duration-500 ease-out flex flex-col h-full w-full overflow-hidden"
+                            className="liquid-glass hover-sketch transition-all duration-500 ease-out flex flex-col h-full w-full overflow-hidden"
                             style={{
                                 transform: hoveredProject === index ? 'scale(1.02)' : 'scale(1)',
                                 minHeight: '700px',
@@ -290,7 +290,7 @@ function Projects() {
                                     <h3 className="text-xl font-bold text-primary">{project.title}</h3>
                                     <p className="text-accent text-sm font-code">{project.period}</p>
                                 </div>
-                                <p className="text-secondary mb-4 leading-relaxed" style={{ flexGrow: 1 }}>{project.description}</p>
+                                <p className="text-secondary mb-4 leading-relaxed text-left" style={{ flexGrow: 1 }}>{project.description}</p>
 
                                 <div className="mb-4 flex flex-wrap gap-2">
                                     {project.tech.map(tech => (
