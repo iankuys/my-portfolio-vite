@@ -2,79 +2,21 @@
 function Hero({ isLoaded }) {
     return (
         <section id="home" className="pt-32 pb-24 bg-primary safe-container">
-            {/* Starfield Background */}
+            {/* Floating Geometric Background */}
             <div className="safe-background">
-                {/* Random colored stars - Layer 1 */}
-                <div className="absolute inset-0" style={{
-                    background: `
-                        radial-gradient(1px 1px at 23px 67px, rgba(0, 212, 255, 0.9), transparent),
-                        radial-gradient(2px 2px at 89px 34px, rgba(168, 85, 247, 0.7), transparent),
-                        radial-gradient(1px 1px at 156px 91px, rgba(16, 185, 129, 0.8), transparent),
-                        radial-gradient(2px 2px at 234px 12px, rgba(0, 212, 255, 0.6), transparent),
-                        radial-gradient(1px 1px at 312px 78px, rgba(168, 85, 247, 0.9), transparent),
-                        radial-gradient(1px 1px at 378px 45px, rgba(16, 185, 129, 0.5), transparent),
-                        radial-gradient(2px 2px at 445px 89px, rgba(0, 212, 255, 0.8), transparent),
-                        radial-gradient(1px 1px at 67px 123px, rgba(168, 85, 247, 0.4), transparent),
-                        radial-gradient(2px 2px at 189px 156px, rgba(16, 185, 129, 0.7), transparent),
-                        radial-gradient(1px 1px at 298px 134px, rgba(0, 212, 255, 0.5), transparent),
-                        radial-gradient(1px 1px at 423px 167px, rgba(168, 85, 247, 0.6), transparent),
-                        radial-gradient(2px 2px at 134px 189px, rgba(16, 185, 129, 0.9), transparent)
-                    `,
-                    backgroundSize: '500px 200px',
-                    animation: 'starfield 28s linear infinite'
-                }}></div>
+                {/* Floating shapes - subtle and minimal */}
+                <div className="absolute top-20 left-12 w-3 h-3 bg-accent opacity-[0.06] rounded-full float-slow"></div>
+                <div className="absolute top-32 right-16 w-2 h-6 bg-accent opacity-[0.04] float-slower" style={{ borderRadius: '50%' }}></div>
+                <div className="absolute bottom-40 left-1/4 w-4 h-2 bg-accent opacity-[0.05] float-slow" style={{ borderRadius: '40% 60%' }}></div>
+                <div className="absolute top-1/2 right-20 w-2 h-2 bg-accent opacity-[0.04] float-slower" style={{ borderRadius: '30% 70% 70% 30%' }}></div>
+                <div className="absolute bottom-32 right-1/3 w-5 h-1 bg-accent opacity-[0.03] float-slow" style={{ borderRadius: '50%' }}></div>
+                <div className="absolute top-1/3 left-1/3 w-1 h-4 bg-accent opacity-[0.05] float-slower" style={{ borderRadius: '50%' }}></div>
                 
-                {/* Random white stars - Layer 2 */}
-                <div className="absolute inset-0" style={{
-                    background: `
-                        radial-gradient(1px 1px at 43px 28px, rgba(255, 255, 255, 0.8), transparent),
-                        radial-gradient(1px 1px at 127px 73px, rgba(255, 255, 255, 0.4), transparent),
-                        radial-gradient(1px 1px at 198px 39px, rgba(255, 255, 255, 0.9), transparent),
-                        radial-gradient(1px 1px at 267px 84px, rgba(255, 255, 255, 0.3), transparent),
-                        radial-gradient(1px 1px at 334px 17px, rgba(255, 255, 255, 0.7), transparent),
-                        radial-gradient(1px 1px at 89px 156px, rgba(255, 255, 255, 0.5), transparent),
-                        radial-gradient(1px 1px at 456px 123px, rgba(255, 255, 255, 0.6), transparent),
-                        radial-gradient(1px 1px at 178px 178px, rgba(255, 255, 255, 0.8), transparent),
-                        radial-gradient(1px 1px at 356px 189px, rgba(255, 255, 255, 0.4), transparent),
-                        radial-gradient(1px 1px at 67px 234px, rgba(255, 255, 255, 0.9), transparent),
-                        radial-gradient(1px 1px at 289px 267px, rgba(255, 255, 255, 0.5), transparent),
-                        radial-gradient(1px 1px at 423px 245px, rgba(255, 255, 255, 0.7), transparent)
-                    `,
-                    backgroundSize: '480px 180px',
-                    animation: 'starfield-fast 16s linear infinite'
-                }}></div>
-                
-                {/* Scattered bright stars - Layer 3 */}
-                <div className="absolute inset-0" style={{
-                    background: `
-                        radial-gradient(3px 3px at 78px 56px, rgba(0, 212, 255, 0.9), transparent),
-                        radial-gradient(2px 2px at 234px 123px, rgba(168, 85, 247, 0.8), transparent),
-                        radial-gradient(3px 3px at 389px 89px, rgba(16, 185, 129, 0.9), transparent),
-                        radial-gradient(2px 2px at 156px 234px, rgba(255, 255, 255, 0.9), transparent),
-                        radial-gradient(3px 3px at 445px 178px, rgba(0, 212, 255, 0.8), transparent),
-                        radial-gradient(2px 2px at 67px 289px, rgba(168, 85, 247, 0.7), transparent)
-                    `,
-                    backgroundSize: '520px 320px',
-                    animation: 'starfield-slow 42s linear infinite'
-                }}></div>
-                
-                {/* Tiny scattered dots - Layer 4 */}
-                <div className="absolute inset-0" style={{
-                    background: `
-                        radial-gradient(0.5px 0.5px at 34px 67px, rgba(255, 255, 255, 0.6), transparent),
-                        radial-gradient(0.5px 0.5px at 145px 23px, rgba(255, 255, 255, 0.4), transparent),
-                        radial-gradient(0.5px 0.5px at 267px 156px, rgba(255, 255, 255, 0.7), transparent),
-                        radial-gradient(0.5px 0.5px at 356px 89px, rgba(255, 255, 255, 0.3), transparent),
-                        radial-gradient(0.5px 0.5px at 123px 234px, rgba(255, 255, 255, 0.5), transparent),
-                        radial-gradient(0.5px 0.5px at 445px 45px, rgba(255, 255, 255, 0.8), transparent),
-                        radial-gradient(0.5px 0.5px at 89px 178px, rgba(255, 255, 255, 0.4), transparent),
-                        radial-gradient(0.5px 0.5px at 298px 267px, rgba(255, 255, 255, 0.6), transparent),
-                        radial-gradient(0.5px 0.5px at 423px 134px, rgba(255, 255, 255, 0.5), transparent),
-                        radial-gradient(0.5px 0.5px at 178px 89px, rgba(255, 255, 255, 0.7), transparent)
-                    `,
-                    backgroundSize: '460px 300px',
-                    animation: 'starfield-micro 12s linear infinite'
-                }}></div>
+                {/* More subtle floating shapes */}
+                <div className="absolute top-40 right-1/4 w-2 h-2 bg-amber opacity-[0.04] rounded-full float-slow" style={{ borderRadius: '60% 40%' }}></div>
+                <div className="absolute bottom-20 left-16 w-3 h-1 bg-accent opacity-[0.05] float-slower" style={{ borderRadius: '50%' }}></div>
+                <div className="absolute top-60 left-1/2 w-1 h-3 bg-amber opacity-[0.03] float-slow" style={{ borderRadius: '40%' }}></div>
+                <div className="absolute bottom-60 right-12 w-4 h-1 bg-accent opacity-[0.04] float-slower" style={{ borderRadius: '30% 70%' }}></div>
             </div>
             
             {/* Twinkling effect overlay */}
@@ -94,7 +36,7 @@ function Hero({ isLoaded }) {
                             $ whoami
                         </span>
                     </div>
-                    <h1 className="text-5xl md:text-7xl font-bold mb-6 text-primary leading-tight">
+                    <h1 className={`text-5xl md:text-7xl font-bold mb-6 text-primary leading-tight w-fit mx-auto ${isLoaded ? 'typewriter' : 'opacity-0'}`}>
                         Ian Ku<span className="gradient-text">.</span>
                     </h1>
                     <h2 className={`text-xl md:text-2xl text-secondary mb-8 leading-relaxed ${isLoaded ? 'opacity-100 delay-200' : 'opacity-0'}`}>
@@ -121,7 +63,7 @@ function Hero({ isLoaded }) {
                         </a>
                     </div>
                 </div>
-                <div className={`md:w-1/2 flex justify-center ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
+                <div className={`md:w-1/2 flex justify-center ${isLoaded ? 'paper-drop paper-drop-delay-1' : 'opacity-0'}`}>
                     <div className="relative">
                         <div className="w-72 h-72 overflow-hidden relative border-4 border-accent" style={{ 
                             borderRadius: '48% 52% 54% 46% / 45% 47% 53% 55%',

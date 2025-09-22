@@ -154,7 +154,7 @@ function Experience() {
                                                             {exp.location}
                                                         </p>
                                                     )}
-                                                    <span className="bg-glass text-accent text-sm font-code px-4 py-2 rounded-full whitespace-nowrap border border-accent/20 hover:border-accent/40 transition-all">
+                                                    <span className="text-green text-sm font-code whitespace-nowrap">
                                                         {exp.period}
                                                     </span>
                                                 </div>

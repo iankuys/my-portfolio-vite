@@ -251,13 +251,13 @@ function Projects() {
                                 {/* Image Counter */}
                                 {project.images.length > 1 && (
                                     <div
-                                        className="absolute text-white backdrop-blur-md text-sm px-4 py-2 rounded-full font-bold"
+                                        className="absolute text-white text-sm px-2 py-1 rounded font-medium"
                                         style={{
                                             bottom: '12px',
                                             left: '50%',
                                             transform: 'translateX(-50%)',
                                             zIndex: 60,
-                                            boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)'
+                                            backgroundColor: 'rgba(0, 0, 0, 0.4)'
                                         }}
                                     >
                                         {getCurrentCardImage(index) + 1} / {project.images.length}
@@ -288,7 +288,7 @@ function Projects() {
                             <div className="p-6 bg-glass" style={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
                                 <div className="mb-2">
                                     <h3 className="text-xl font-bold text-primary">{project.title}</h3>
-                                    <p className="text-accent text-sm font-code">{project.period}</p>
+                                    <p className="text-accent text-sm font-code-no-shadow">{project.period}</p>
                                 </div>
                                 <p className="text-secondary mb-4 leading-relaxed text-left" style={{ flexGrow: 1 }}>{project.description}</p>
 

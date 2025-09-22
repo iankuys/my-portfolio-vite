@@ -119,6 +119,20 @@ body {
   text-shadow: 0 0 10px var(--color-accent);
 }
 
+/* Remove text-shadow for green text dates and ensure green color */
+.text-green.font-code {
+  text-shadow: none;
+  color: var(--color-green) !important;
+}
+
+/* Font code without shadow for projects */
+.font-code-no-shadow {
+  font-family: 'JetBrains Mono', 'Source Code Pro', monospace;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--color-accent);
+}
+
 /* Terminal theme body with subtle scan lines */
 body {
   background: var(--color-bg-primary);
@@ -779,6 +793,72 @@ html {
     0%, 100% { transform: rotate(0deg); }
     25% { transform: rotate(0.5deg); }
     75% { transform: rotate(-0.5deg); }
+  }
+
+  /* Typewriter animation */
+  .typewriter {
+    overflow: hidden;
+    border-right: 2px solid var(--color-accent);
+    white-space: nowrap;
+    animation: typing 2.5s steps(8, end), blink-caret 0.75s step-end infinite;
+    display: inline-block;
+    max-width: 100%;
+    width: 8ch;
+  }
+
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 8ch; }
+  }
+
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: var(--color-accent); }
+  }
+
+  /* Paper drop-in animation */
+  .paper-drop {
+    animation: paperDrop 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(-20px) rotate(-2deg);
+  }
+
+  @keyframes paperDrop {
+    to {
+      opacity: 1;
+      transform: translateY(0) rotate(0deg);
+    }
+  }
+
+  .paper-drop-delay-1 { animation-delay: 0.3s; }
+  .paper-drop-delay-2 { animation-delay: 0.6s; }
+  .paper-drop-delay-3 { animation-delay: 0.9s; }
+
+  /* Floating background elements */
+  .float-slow {
+    animation: floatSlow 6s ease-in-out infinite;
+  }
+
+  .float-slower {
+    animation: floatSlower 8s ease-in-out infinite;
+  }
+
+  @keyframes floatSlow {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-10px) rotate(1deg);
+    }
+  }
+
+  @keyframes floatSlower {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-15px) rotate(-1deg);
+    }
   }
 }
 
