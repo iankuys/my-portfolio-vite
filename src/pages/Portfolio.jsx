@@ -4,7 +4,6 @@ import Hero from '../components/Hero.jsx';
 import About from '../components/About.jsx';
 import Projects from '../components/Projects.jsx';
 import Experience from '../components/Experience.jsx';
-import Contact from '../components/Contact.jsx';
 import Footer from '../components/Footer.jsx';
 
 // Animation utility function for scroll reveal
@@ -45,16 +44,33 @@ export default function Portfolio() {
 
     const handleScroll = () => {
         const scrollPosition = window.scrollY;
-        const sections = document.querySelectorAll('section');
-
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - 100;
-            const sectionHeight = section.offsetHeight;
-
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                setActiveSection(section.id);
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        
+        // If we're near the bottom of the page, activate footer
+        if (scrollPosition + windowHeight >= documentHeight - 50) {
+            setActiveSection('footer');
+            return;
+        }
+        
+        // Check all sections and footer
+        const allElements = [...document.querySelectorAll('section'), document.querySelector('#footer')].filter(Boolean);
+        
+        let currentSection = '';
+        allElements.forEach(element => {
+            if (element) {
+                const elementTop = element.offsetTop - 150;
+                const elementHeight = element.offsetHeight;
+                
+                if (scrollPosition >= elementTop && scrollPosition < elementTop + elementHeight) {
+                    currentSection = element.id;
+                }
             }
         });
+        
+        if (currentSection) {
+            setActiveSection(currentSection);
+        }
     };
 
     useEffect(() => {
@@ -139,7 +155,6 @@ export default function Portfolio() {
                 <About />
                 <Projects />
                 <Experience />
-                <Contact />
             </main>
             <Footer />
         </div>

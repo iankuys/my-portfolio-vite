@@ -1,97 +1,65 @@
 import { useState, useEffect, useMemo } from 'react';
+import { Mail, Github, Linkedin, Download } from 'lucide-react';
 
 // About Section
 function About() {
     const skills = useMemo(() => [
-        { name: 'Python', level: 95, icon: '🐍' },
-        { name: 'JavaScript/TypeScript', level: 90, icon: '⚡' },
-        { name: 'React.js/Vue.js', level: 87, icon: '⚛️' },
-        { name: 'AWS Cloud Services', level: 90, icon: '☁️' },
-        { name: 'Flask/FastAPI', level: 80, icon: '🔥' },
-        { name: 'DevOps', level: 85, icon: '🚀' },
-        { name: 'C++/C#', level: 75, icon: '🔧' },
-        { name: 'SQL', level: 80, icon: '🗄️' },
+        { name: 'Python', icon: '🐍' },
+        { name: 'JavaScript/TypeScript', icon: '⚡' },
+        { name: 'React.js/Vue.js', icon: '⚛️' },
+        { name: 'AWS Cloud Services', icon: '☁️' },
+        { name: 'Flask/FastAPI', icon: '🔥' },
+        { name: 'DevOps', icon: '🚀' },
+        { name: 'C++/C#', icon: '🔧' },
+        { name: 'SQL', icon: '🗄️' },
     ], []);
 
-    const [animated, setAnimated] = useState({});
-
-    // Animation for skill bars
+    // Simple fade-in animation for skills
     useEffect(() => {
-        const handleSkillAnimation = () => {
-            const skillSection = document.getElementById('skills-section');
-            if (!skillSection) return;
-
-            const position = skillSection.getBoundingClientRect();
-
-            // If skills section is in view
-            if (position.top < window.innerHeight && position.bottom >= 0) {
-                // Animate each skill bar sequentially
-                skills.forEach((skill, index) => {
-                    setTimeout(() => {
-                        setAnimated(prev => ({
-                            ...prev,
-                            [skill.name]: true
-                        }));
-                    }, index * 200); // Stagger effect
-                });
-            }
-        };
-
-        window.addEventListener('scroll', handleSkillAnimation);
-        // Initial check
-        handleSkillAnimation();
-
-        return () => {
-            window.removeEventListener('scroll', handleSkillAnimation);
-        };
-    }, [skills]);
-
-    // Update the getSkillTier function to include shiny and pixelated styles
-    const getSkillTier = (level) => {
-        if (level >= 90) return { tier: 'S', style: 'shiny-pixelated s-tier' };
-        if (level >= 80) return { tier: 'A', style: 'shiny-pixelated a-tier' };
-        if (level >= 70) return { tier: 'B', style: 'shiny-pixelated' };
-        return { tier: 'C-tier', style: 'text-gray-400' };
-    };
+        const skillSection = document.getElementById('skills-section');
+        if (skillSection) {
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('animate-fade-in');
+                        }
+                    });
+                },
+                { threshold: 0.1 }
+            );
+            observer.observe(skillSection);
+            return () => observer.disconnect();
+        }
+    }, []);
 
     return (
         <section id="about" className="py-24 bg-primary safe-container">
-            {/* Animated background elements */}
+            {/* Subtle paper texture */}
             <div className="safe-background">
-                <div className="absolute top-20 left-20 w-64 h-64 bg-green opacity-5 rounded-full blur-3xl float transform-gpu"></div>
-                <div className="absolute bottom-20 right-20 w-80 h-80 bg-purple opacity-5 rounded-full blur-3xl float transform-gpu" style={{ animationDelay: '4s' }}></div>
-                <div className="absolute top-1/2 left-1/3 w-48 h-48 bg-accent opacity-3 rounded-full blur-2xl pulse-accent transform-gpu"></div>
-            </div>
-
-            {/* Grid pattern overlay */}
-            <div className="safe-background opacity-5">
-                <div className="absolute inset-0" style={{
-                    backgroundImage: `
-                        linear-gradient(rgba(16, 185, 129, 0.1) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(16, 185, 129, 0.1) 1px, transparent 1px)
-                    `,
-                    backgroundSize: '40px 40px'
-                }}></div>
+                <div className="absolute top-10 left-10 w-32 h-32 bg-accent opacity-[0.02] rounded-full wobble"></div>
+                <div className="absolute bottom-32 right-16 w-24 h-24 bg-green opacity-[0.03] rounded-full" style={{ transform: 'rotate(15deg)' }}></div>
+                <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-amber opacity-[0.02] rounded-full" style={{ transform: 'rotate(-10deg)' }}></div>
             </div>
 
             <div className="container mx-auto px-4 safe-content">
-                <div className="text-center mb-20">
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary">
+                <div className="text-center mb-16">
+                    <h2 className="section-header font-bold mb-6 text-primary">
                         About <span className="gradient-text">Me</span>
                     </h2>
-                    <p className="text-muted text-lg max-w-2xl mx-auto font-code">
+                    <p className="text-muted text-sm max-w-2xl mx-auto font-code">
                         {`// Passionate about creating digital solutions that make a difference`}
                     </p>
                 </div>
 
                 <div className="flex flex-col lg:flex-row gap-16 max-w-7xl mx-auto">
                     <div className="lg:w-1/2 reveal">
-                        <div className="liquid-glass p-10 h-full hover-glow">
-                            <div className="flex items-center mb-8">
-                                <div className="w-1 h-8 bg-gradient-to-b from-accent to-green mr-4 rounded-full"></div>
-                                <h3 className="text-2xl font-bold text-primary">Who I Am</h3>
+                        <div className="liquid-glass p-8 h-full hover-sketch">
+                            <div className="flex items-center mb-6">
+                                <div className="w-1 h-6 bg-gradient-to-b from-accent to-green mr-3 rounded-full"></div>
+                                <h3 className="text-xl font-bold text-primary">Who I Am</h3>
                             </div>
-                            <div className="space-y-6 text-secondary leading-relaxed text-lg">
+                            <div className="space-y-4 text-secondary leading-relaxed text-sm text-left">
                                 <p className="transition-all duration-300 hover:text-primary">
                                     I'm a <span className="text-accent font-semibold">software engineer</span>, gamer 🎮, and future founder 🚀 with <span className="text-green font-semibold">3+ years of experience</span> building fast, intuitive software that ships and scales.
                                 </p>
@@ -104,61 +72,75 @@ function About() {
                                 <p className="transition-all duration-300 hover:text-primary">
                                     I love connecting with people who think big. Lately, I’ve been deep in <span className="text-purple font-semibold">AI workflows and prompt design</span>, shaping what’s next, one build at a time.
                                 </p>
-                                <p className="text-accent font-semibold text-l mt-8 font-code">
-                                    Let’s build something that actually matters.
+                                <p className="text-accent font-semibold text-sm mt-6 font-code">
+                                    Let's build something that actually matters.
                                 </p>
                             </div>
                         </div>
                     </div>
 
                     <div id="skills-section" className="lg:w-1/2 reveal">
-                        <div className="liquid-glass p-10 h-full hover-glow">
-                            <div className="flex items-center mb-8">
-                                <div className="w-1 h-8 bg-gradient-to-b from-purple to-accent mr-4 rounded-full"></div>
-                                <h3 className="text-2xl font-bold text-primary">Technical Skills</h3>
+                        <div className="liquid-glass p-8 h-full hover-sketch">
+                            <div className="flex items-center mb-6">
+                                <div className="w-1 h-6 bg-gradient-to-b from-purple to-accent mr-3 rounded-full"></div>
+                                <h3 className="text-xl font-bold text-primary">Technical Skills</h3>
                             </div>
-                            <div className="space-y-5">
-                                {skills.map((skill, index) => {
-                                    const { tier, style } = getSkillTier(skill.level);
-                                    return (
-                                        <div key={skill.name} className="transition-all duration-500 hover:scale-105">
-                                            <div className="flex justify-between items-center mb-2">
-                                                <div className="flex items-center gap-3">
-                                                    <span className="text-xl transition-transform duration-300 hover:scale-110">
-                                                        {skill.icon}
-                                                    </span>
-                                                    <span className="font-semibold text-primary text-base">{skill.name}</span>
-                                                </div>
-                                                <span className={`font-code text-xs bg-accent-soft px-2 py-1 rounded-full ${style}`}>
-                                                    {tier}
-                                                </span>
-                                            </div>
-                                            <div className="w-full bg-tertiary rounded-full h-2 overflow-hidden shadow-inner">
-                                                <div
-                                                    className="h-2 rounded-full transition-all duration-1500 ease-out shadow-lg"
-                                                    style={{
-                                                        width: animated[skill.name] ? `${skill.level}%` : '0%',
-                                                        transitionDelay: `${index * 150}ms`,
-                                                        background: 'linear-gradient(to right, #00d4ff, #a855f7, #10b981)',
-                                                        boxShadow: '0 0 15px rgba(0, 212, 255, 0.4)'
-                                                    }}
-                                                />
-                                            </div>
-                                        </div>
-                                    );
-                                })}
+                            <div className="grid grid-cols-2 gap-4">
+                                {skills.map((skill, index) => (
+                                    <div key={skill.name} className="flex items-center gap-2 p-2 rounded-lg bg-glass border border-soft transition-all duration-300 hover:bg-glass-hover hover:border-accent">
+                                        <span className="text-sm transition-transform duration-300 hover:scale-110">
+                                            {skill.icon}
+                                        </span>
+                                        <span className="font-medium text-primary text-xs font-mono">
+                                            {skill.name}
+                                        </span>
+                                    </div>
+                                ))}
                             </div>
 
                             {/* Certifications badge */}
-                            <div className="mt-8 p-4 bg-glass rounded-xl border border-accent/20">
-                                <div className="flex items-center justify-center">
-                                    <div className="text-center">
-                                        <div className="text-accent font-bold text-base mb-1">🏆 Certified</div>
-                                        <div className="text-secondary font-code text-sm">AWS Cloud Practitioner</div>
+                            <div className="mt-6 p-3 bg-glass rounded-lg border border-soft">
+                                <div className="flex items-start gap-2">
+                                    <span className="text-sm mt-0.5">🏆</span>
+                                    <div className="flex-1">
+                                        <div className="text-accent font-semibold text-xs font-mono">Certified</div>
+                                        <div className="text-secondary font-mono text-xs leading-tight">AWS Cloud Practitioner</div>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
+                    </div>
+                </div>
+
+                {/* Contact section - just icon buttons */}
+                <div className="max-w-3xl mx-auto mt-12">
+                    <div className="flex gap-4 justify-center">
+                        <a
+                            href="mailto:iankuyisien@gmail.com"
+                            className="btn-primary p-3"
+                            aria-label="Email"
+                        >
+                            <Mail size={20} />
+                        </a>
+                        <a
+                            href="https://github.com/iankuys"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn-secondary p-3"
+                            aria-label="GitHub"
+                        >
+                            <Github size={20} />
+                        </a>
+                        <a
+                            href="https://linkedin.com/in/ian-ku-yi-sien/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn-secondary p-3"
+                            aria-label="LinkedIn"
+                        >
+                            <Linkedin size={20} />
+                        </a>
                     </div>
                 </div>
             </div>

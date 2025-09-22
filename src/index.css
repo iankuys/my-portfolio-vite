@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Source+Code+Pro:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 .App {
@@ -40,72 +40,121 @@
   }
 }
 
-/* Custom CSS Variables for Dark Theme */
+/* Custom CSS Variables for Scrapbook Terminal Theme */
 :root {
-  /* Dark Theme Colors */
-  --color-primary: #0a0a0a;
-  --color-secondary: #1a1a1a;
-  --color-tertiary: #2a2a2a;
-  --color-accent: #00d4ff;
-  --color-accent-light: #33e0ff;
-  --color-accent-dark: #0099cc;
-  --color-purple: #a855f7;
-  --color-purple-light: #c084fc;
-  --color-green: #10b981;
-  --color-green-light: #34d399;
+  /* Scrapbook Terminal Theme Colors */
+  --color-primary: #2a2a2a;
+  --color-secondary: #3a3a3a;
+  --color-tertiary: #4a4a4a;
+  --color-accent: #8b7355;
+  --color-accent-light: #a08766;
+  --color-accent-dark: #766144;
+  --color-amber: #d4a574;
+  --color-amber-light: #e1b685;
+  --color-green: #7a9b6f;
+  --color-green-light: #8aab7f;
   
   /* Text Colors */
-  --color-text-primary: #ffffff;
-  --color-text-secondary: #e5e7eb;
-  --color-text-muted: #9ca3af;
-  --color-text-accent: #00d4ff;
+  --color-text-primary: #2a2a2a;
+  --color-text-secondary: #4a4a4a;
+  --color-text-muted: #6a6a6a;
+  --color-text-accent: #8b7355;
   
   /* Background Colors */
-  --color-bg-primary: #0a0a0a;
-  --color-bg-secondary: #111111;
-  --color-bg-tertiary: #1a1a1a;
-  --color-bg-glass: rgba(255, 255, 255, 0.03);
-  --color-bg-glass-hover: rgba(255, 255, 255, 0.06);
-  --color-bg-accent: rgba(0, 212, 255, 0.05);
+  --color-bg-primary: #f5f2ea;
+  --color-bg-secondary: #ede8dc;
+  --color-bg-tertiary: #e5dfd0;
+  --color-bg-alt: #f0ede4;
+  --color-bg-glass: rgba(139, 115, 85, 0.08);
+  --color-bg-glass-hover: rgba(139, 115, 85, 0.12);
+  --color-bg-accent: rgba(139, 115, 85, 0.1);
   
   /* Border Colors */
-  --color-border: rgba(255, 255, 255, 0.08);
-  --color-border-light: rgba(255, 255, 255, 0.04);
-  --color-border-accent: rgba(0, 212, 255, 0.2);
+  --color-border: rgba(139, 115, 85, 0.3);
+  --color-border-light: rgba(139, 115, 85, 0.2);
+  --color-border-accent: rgba(139, 115, 85, 0.5);
   
   /* Shadows */
-  --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.3);
-  --shadow-glass-hover: 0 16px 48px rgba(0, 0, 0, 0.4);
-  --shadow-accent: 0 8px 32px rgba(0, 212, 255, 0.15);
+  --shadow-glass: 0 4px 16px rgba(0, 0, 0, 0.1);
+  --shadow-glass-hover: 0 8px 24px rgba(0, 0, 0, 0.15);
+  --shadow-accent: 0 4px 16px rgba(139, 115, 85, 0.2);
+  --shadow-terminal: 0 2px 8px rgba(139, 115, 85, 0.3);
 }
 
-/* Global Styles */
+/* Global Styles - Terminal Font */
 * {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  font-family: 'JetBrains Mono', 'Source Code Pro', 'Consolas', 'Monaco', 'Lucida Console', monospace;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+body {
+  font-size: 14px;
+}
+
+/* Perfect section headers */
+.section-header {
+  font-size: 2.25rem !important;
+  line-height: 1.2 !important;
+}
+
+@media (min-width: 768px) {
+  .section-header {
+    font-size: 3rem !important;
+  }
 }
 
 .font-mono {
-  font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+  font-family: 'JetBrains Mono', 'Source Code Pro', 'Consolas', 'Monaco', monospace;
   font-weight: 500;
-  letter-spacing: -0.025em;
+  letter-spacing: 0.05em;
 }
 
-/* Enhanced coding font with personality */
+/* Enhanced terminal font with glow */
 .font-code {
-  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-family: 'JetBrains Mono', 'Source Code Pro', monospace;
   font-weight: 600;
-  letter-spacing: 0.025em;
-  background: linear-gradient(135deg, var(--color-accent), var(--color-purple));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  letter-spacing: 0.1em;
+  color: var(--color-accent);
+  text-shadow: 0 0 10px var(--color-accent);
 }
 
-/* Dark theme body */
+/* Remove text-shadow for green text dates and ensure green color */
+.text-green.font-code {
+  text-shadow: none;
+  color: var(--color-green) !important;
+}
+
+/* Font code without shadow for projects */
+.font-code-no-shadow {
+  font-family: 'JetBrains Mono', 'Source Code Pro', monospace;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--color-accent);
+}
+
+/* Terminal theme body with subtle scan lines */
 body {
   background: var(--color-bg-primary);
   color: var(--color-text-primary);
   min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(90deg, transparent 98%, rgba(139, 115, 85, 0.02) 100%),
+    linear-gradient(transparent 98%, rgba(139, 115, 85, 0.02) 100%);
+  background-size: 20px 20px;
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.3;
 }
 
 /* Smooth scrolling */
@@ -183,6 +232,10 @@ html {
     background-color: var(--color-bg-tertiary);
   }
   
+  .bg-alt {
+    background-color: var(--color-bg-alt);
+  }
+  
   .bg-glass {
     background: var(--color-bg-glass);
     backdrop-filter: blur(10px);
@@ -249,33 +302,46 @@ html {
     will-change: transform, filter;
   }
   
-  /* Enhanced gradients with dark theme */
+  /* Enhanced gradients with terminal theme */
   .gradient-primary {
     background: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
   }
   
   .gradient-glass {
     background: linear-gradient(135deg, 
-      rgba(255, 255, 255, 0.02) 0%, 
-      rgba(255, 255, 255, 0.05) 50%, 
-      rgba(0, 212, 255, 0.02) 100%);
+      rgba(201, 170, 113, 0.02) 0%, 
+      rgba(201, 170, 113, 0.05) 50%, 
+      rgba(201, 170, 113, 0.02) 100%);
     backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(201, 170, 113, 0.1);
   }
   
   .gradient-accent {
     background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
   }
   
-  .gradient-purple {
-    background: linear-gradient(135deg, var(--color-purple) 0%, var(--color-purple-light) 100%);
+  .gradient-terminal {
+    background: linear-gradient(135deg, var(--color-green) 0%, var(--color-green-light) 100%);
   }
   
   .gradient-text {
-    background: linear-gradient(135deg, var(--color-accent), var(--color-purple), var(--color-green));
+    background: linear-gradient(135deg, var(--color-accent), var(--color-amber), var(--color-green));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+  
+  /* Terminal cursor animation */
+  .terminal-cursor::after {
+    content: '_';
+    color: var(--color-accent);
+    animation: terminal-blink 1.5s infinite;
+    margin-left: 2px;
+  }
+  
+  @keyframes terminal-blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
   }
   
   /* Gradient from/to classes */
@@ -313,22 +379,45 @@ html {
     --tw-gradient-to: var(--color-green);
   }
   
-  /* Liquid glass effects */
+  /* Sketchy/cutesy card effects */
   .liquid-glass {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 20px;
-    box-shadow: var(--shadow-glass);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(255, 255, 255, 0.6);
+    border: 2px solid var(--color-border);
+    border-radius: 12px 8px 14px 10px;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    transform: rotate(-0.5deg);
+  }
+  
+  .liquid-glass:nth-child(even) {
+    transform: rotate(0.3deg);
+    border-radius: 10px 14px 8px 12px;
+  }
+  
+  .liquid-glass:nth-child(odd) {
+    border-radius: 14px 10px 12px 8px;
+  }
+  
+  .liquid-glass::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border: 1px dashed var(--color-border);
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.3s ease;
   }
   
   .liquid-glass:hover {
-    background: rgba(255, 255, 255, 0.06);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(0, 212, 255, 0.2);
-    box-shadow: var(--shadow-glass-hover), var(--shadow-accent);
-    transform: translateY(-4px) scale(1.02);
+    background: rgba(255, 255, 255, 0.8);
+    border-color: var(--color-accent);
+    transform: rotate(0deg) translateY(-3px);
+    box-shadow: 3px 6px 12px rgba(0, 0, 0, 0.12);
+  }
+  
+  .liquid-glass:hover::before {
+    opacity: 0.3;
   }
 
   /* Black hole effect */
@@ -483,13 +572,13 @@ html {
     box-shadow: var(--shadow-glass-hover);
   }
   
-  .hover-glow {
+  .hover-sketch {
     transition: all 0.3s ease;
     position: relative;
   }
   
-  .hover-glow:hover {
-    box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+  .hover-sketch:hover {
+    transform: rotate(-0.2deg) scale(1.01);
   }
   
   .hover-glass {
@@ -596,105 +685,228 @@ html {
     transform: translateY(-4px) scale(1.01);
   }
   
-  /* Enhanced button styles */
+  /* Sketchy button styles */
   .btn-primary {
-    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
+    background: var(--color-accent);
     color: var(--color-primary);
-    padding: 1rem 2rem;
-    border-radius: 12px;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px 12px 10px 6px;
     font-weight: 600;
-    font-size: 0.95rem;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    border: none;
-    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.2);
+    font-size: 0.9rem;
+    font-family: 'JetBrains Mono', monospace;
+    transition: all 0.3s ease;
+    border: 2px solid var(--color-accent-dark);
+    box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.2);
     position: relative;
-    overflow: hidden;
+    text-transform: lowercase;
+    letter-spacing: 0.05em;
+    transform: rotate(-1deg);
   }
   
   .btn-primary:hover {
-    background: linear-gradient(135deg, var(--color-accent-light), var(--color-accent));
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+    background: var(--color-accent-light);
+    border-color: var(--color-accent);
+    transform: rotate(0deg) translateY(-2px);
+    box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.25);
   }
   
   .btn-secondary {
-    background: var(--color-bg-glass);
-    backdrop-filter: blur(10px);
+    background: transparent;
     color: var(--color-text-accent);
-    padding: 1rem 2rem;
-    border-radius: 12px;
-    font-weight: 600;
-    font-size: 0.95rem;
-    border: 1px solid var(--color-border-accent);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px 10px 8px 12px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    font-family: 'JetBrains Mono', monospace;
+    border: 2px solid var(--color-border-accent);
+    transition: all 0.3s ease;
+    text-transform: lowercase;
+    letter-spacing: 0.05em;
+    transform: rotate(0.5deg);
   }
   
   .btn-secondary:hover {
-    background: var(--color-bg-glass-hover);
-    backdrop-filter: blur(15px);
+    background: rgba(201, 170, 113, 0.1);
     border-color: var(--color-accent);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.15);
+    transform: rotate(0deg) translateY(-2px);
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
   }
   
-  /* Neon glow effect */
+  /* Sketchy highlight effect */
   .neon-glow {
-    box-shadow: 0 0 5px var(--color-accent), 0 0 20px var(--color-accent), 0 0 35px var(--color-accent);
+    border: 2px dashed var(--color-accent);
+    border-radius: 8px 12px 10px 6px;
+    background: rgba(201, 170, 113, 0.05);
   }
   
-  /* Glass morphism utility */
+  /* Paper terminal morphism utility */
   .glass-morph {
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(201, 170, 113, 0.02);
     backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(201, 170, 113, 0.1);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   }
+  
+  /* Cutesy decorative elements */
+  .sketchy-underline {
+    position: relative;
+  }
+  
+  .sketchy-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  
+  .sketchy-underline:hover::after {
+    transform: scaleX(1);
+  }
+  
+  .doodle-heart::before {
+    content: '♡';
+    color: var(--color-accent);
+    opacity: 0;
+    position: absolute;
+    top: -10px;
+    right: -5px;
+    font-size: 12px;
+    transition: opacity 0.3s ease;
+  }
+  
+  .doodle-heart:hover::before {
+    opacity: 1;
+  }
+  
+  /* Wobble animation for fun */
+  .wobble {
+    animation: wobble 2s ease-in-out infinite;
+  }
+  
+  @keyframes wobble {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(0.5deg); }
+    75% { transform: rotate(-0.5deg); }
+  }
+
+  /* Typewriter animation */
+  .typewriter {
+    overflow: hidden;
+    border-right: 2px solid var(--color-accent);
+    white-space: nowrap;
+    animation: typing 2.5s steps(8, end), blink-caret 0.75s step-end infinite;
+    display: inline-block;
+    max-width: 100%;
+    width: 8ch;
+  }
+
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 8ch; }
+  }
+
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: var(--color-accent); }
+  }
+
+  /* Paper drop-in animation */
+  .paper-drop {
+    animation: paperDrop 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(-20px) rotate(-2deg);
+  }
+
+  @keyframes paperDrop {
+    to {
+      opacity: 1;
+      transform: translateY(0) rotate(0deg);
+    }
+  }
+
+  .paper-drop-delay-1 { animation-delay: 0.3s; }
+  .paper-drop-delay-2 { animation-delay: 0.6s; }
+  .paper-drop-delay-3 { animation-delay: 0.9s; }
+
+  /* Floating background elements */
+  .float-slow {
+    animation: floatSlow 6s ease-in-out infinite;
+  }
+
+  .float-slower {
+    animation: floatSlower 8s ease-in-out infinite;
+  }
+
+  @keyframes floatSlow {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-10px) rotate(1deg);
+    }
+  }
+
+  @keyframes floatSlower {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-15px) rotate(-1deg);
+    }
+  }
 }
 
-/* Add shiny and pixelated styles for S-tier */
+/* Terminal-style animated text for S-tier */
 .shiny-pixelated.s-tier {
-    font-family: 'Pixelify Sans', monospace !important;
-    font-size: 18px !important; /* Consistent size */
-    font-weight: 700 !important;
-    background: linear-gradient(90deg, #ffd700, #ffed4e, #fff700, #ffd700) !important; /* Gold gradient for S-tier */
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-    background-clip: text !important;
-    background-size: 200% !important;
-    animation: shiny-effect-s 2s linear infinite !important;
-    text-shadow: 0 0 15px rgba(255, 215, 0, 0.8) !important;
-    letter-spacing: 0.5px !important;
-}
-
-/* Add shiny and pixelated styles for A-tier */
-.shiny-pixelated.a-tier {
-    font-family: 'Pixelify Sans', monospace !important;
-    font-size: 18px !important; /* Consistent size */
-    font-weight: 700 !important;
-    background: linear-gradient(90deg, #ff6b6b, #ff8e8e, #ffa8a8, #ff6b6b) !important; /* Red gradient for A-tier */
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-    background-clip: text !important;
-    background-size: 200% !important;
-    animation: shiny-effect-a 2.5s linear infinite !important;
-    text-shadow: 0 0 12px rgba(255, 107, 107, 0.6) !important;
-    letter-spacing: 0.5px !important;
-}
-
-/* Fallback for general shiny-pixelated */
-.shiny-pixelated {
-    font-family: 'Pixelify Sans', monospace !important;
+    font-family: 'JetBrains Mono', monospace !important;
     font-size: 18px !important;
     font-weight: 700 !important;
-    letter-spacing: 0.5px !important;
+    background: linear-gradient(90deg, var(--color-amber), var(--color-amber-light), var(--color-amber), var(--color-amber-light)) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    background-size: 200% !important;
+    animation: terminal-glow-s 2s linear infinite !important;
+    text-shadow: 0 0 15px rgba(255, 176, 0, 0.8) !important;
+    letter-spacing: 0.1em !important;
 }
 
-@keyframes shiny-effect-s {
+/* Terminal-style animated text for A-tier */
+.shiny-pixelated.a-tier {
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light), var(--color-accent), var(--color-accent-light)) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    background-size: 200% !important;
+    animation: terminal-glow-a 2.5s linear infinite !important;
+    text-shadow: 0 0 12px rgba(0, 255, 65, 0.6) !important;
+    letter-spacing: 0.1em !important;
+}
+
+/* Fallback for general terminal text */
+.shiny-pixelated {
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.1em !important;
+    color: var(--color-accent) !important;
+}
+
+@keyframes terminal-glow-s {
   0% { background-position: -200% 0; }
   100% { background-position: 200% 0; }
 }
 
-@keyframes shiny-effect-a {
+@keyframes terminal-glow-a {
   0% { background-position: -200% 0; }
   100% { background-position: 200% 0; }
 }
