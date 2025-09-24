@@ -860,6 +860,33 @@ html {
       transform: translateY(-15px) rotate(-1deg);
     }
   }
+
+  @keyframes moveAndFade {
+    0% {
+      opacity: 1;
+      transform: translate(0, 0) rotate(var(--flight-angle)) scale(0.8);
+    }
+    25% {
+      opacity: 1;
+      transform: translate(calc(var(--move-x) * 0.3), calc(var(--move-y) * 0.3)) rotate(var(--flight-angle)) scale(1);
+    }
+    50% {
+      opacity: 0.9;
+      transform: translate(calc(var(--move-x) * 0.6), calc(var(--move-y) * 0.6)) rotate(var(--flight-angle)) scale(1);
+    }
+    75% {
+      opacity: 0.5;
+      transform: translate(calc(var(--move-x) * 0.85), calc(var(--move-y) * 0.85)) rotate(var(--flight-angle)) scale(1);
+    }
+    90% {
+      opacity: 0.2;
+      transform: translate(calc(var(--move-x) * 0.95), calc(var(--move-y) * 0.95)) rotate(var(--flight-angle)) scale(0.9);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(var(--move-x), var(--move-y)) rotate(var(--flight-angle)) scale(0.8);
+    }
+  }
 }
 
 /* Terminal-style animated text for S-tier */
