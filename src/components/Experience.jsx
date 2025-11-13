@@ -18,6 +18,24 @@ function Experience() {
 
     const experiences = [
         {
+            title: "Founding Engineer",
+            company: "Stealth AI Startup",
+            location: "San Francisco, California",
+            period: "August 2025 - Present",
+            description: "Building **production-grade AI application** using Node.js, TypeScript, Firebase, and LangChain with **hybrid retrieval pipelines**. Architecting scalable backends, data models, and **async WebSocket workflows** powering multi-user AI interactions. Improving **RAG accuracy, latency, and model reliability** while developing integrations and multimodal capabilities across tools and devices.",
+            icon: <img src="/icons/stealth.jpeg" alt="Stealth AI Startup" className="w-full h-full object-contain" />,
+            skills: ["Node.js", "TypeScript", "Firebase", "LangChain", "RAG", "Pinecone", "BM25", "WebSockets"]
+        },
+        {
+            title: "Founder & Founding Engineer",
+            company: "Inflow (Personal AI Startup)",
+            location: "Remote, USA",
+            period: "June 2025 - August 2025",
+            description: "Built **LLM-powered email triage platform** using LangChain and Pinecone hybrid search for classification, phishing detection, and smart reply generation. Architected backend with **FastAPI, PostgreSQL, Docker, and Temporal** supporting async agent workflows. Developed **Next.js/TypeScript frontend** with WebSocket-driven inbox intelligence and role-based access control.",
+            icon: <img src="/icons/inflow.ico" alt="Inflow Startup" className="w-full h-full object-contain" />,
+            skills: ["LangChain", "Pinecone", "FastAPI", "PostgreSQL", "Temporal", "Next.js", "TypeScript", "Docker"]
+        },
+        {
             title: "Software Engineer",
             company: "Ulendo Technologies",
             location: "Ann Arbor, Michigan",
