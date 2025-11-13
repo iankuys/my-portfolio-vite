@@ -37,7 +37,6 @@ function Projects() {
     const [cardImageIndexes, setCardImageIndexes] = useState({});
     const [isTransitioning, setIsTransitioning] = useState(false);
     const [transitioningCard, setTransitioningCard] = useState(null);
-    const [preloadedImages, setPreloadedImages] = useState(new Set());
 
     const openGallery = (projectIndex) => {
         setExpandedProject(projectIndex);
@@ -122,7 +121,6 @@ function Projects() {
                     const img = new Image();
                     img.onload = () => {
                         loadedCount++;
-                        setPreloadedImages(prev => new Set([...prev, imageSrc]));
                         console.log(`Loaded image: ${imageSrc} (${loadedCount}/${allImages.length})`);
                     };
                     img.onerror = () => {
@@ -137,7 +135,7 @@ function Projects() {
     }, []);
 
     return (
-        <section id="projects" className="py-16 bg-secondary safe-container">
+        <section id="projects" className="py-24 bg-secondary safe-container">
             {/* Subtle paper texture */}
             <div className="safe-background">
                 <div className="absolute top-12 right-16 w-24 h-24 bg-accent opacity-[0.02] rounded-full wobble"></div>

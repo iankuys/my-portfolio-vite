@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { Mail, Github, Linkedin, Download } from 'lucide-react';
 
 // About Section
@@ -86,7 +86,7 @@ function About() {
                                 <h3 className="text-xl font-bold text-primary">Technical Skills</h3>
                             </div>
                             <div className="grid grid-cols-2 gap-4">
-                                {skills.map((skill, index) => (
+                                {skills.map((skill) => (
                                     <div key={skill.name} className="flex items-center gap-2 p-2 rounded-lg bg-glass border border-soft transition-all duration-300 hover:bg-glass-hover hover:border-accent">
                                         <span className="text-sm transition-transform duration-300 hover:scale-110">
                                             {skill.icon}

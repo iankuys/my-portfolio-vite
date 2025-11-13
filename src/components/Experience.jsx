@@ -156,7 +156,7 @@ function Experience() {
     }, [experienceRefs, experiences.length, visibleItems]);
 
     return (
-        <section id="experience" className="py-16 bg-alt safe-container">
+        <section id="experience" className="py-24 bg-alt safe-container">
             {/* Subtle paper texture */}
             <div className="safe-background">
                 <div className="absolute top-20 left-16 w-28 h-28 bg-accent opacity-[0.02] rounded-full wobble"></div>
