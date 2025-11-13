@@ -1,15 +1,60 @@
 import { useState, useEffect, useRef } from 'react';
 
-// Simple markdown parser for bold text
+// Minimal markdown parser for **bold** and [links](https://...)
 function parseMarkdown(text) {
-    const parts = text.split(/(\*\*.*?\*\*)/);
-    return parts.map((part, index) => {
-        if (part.startsWith('**') && part.endsWith('**')) {
-            const boldText = part.slice(2, -2);
-            return <strong key={index} className="text-accent font-semibold">{boldText}</strong>;
+    // Helper to parse markdown links in a plain string and return React nodes
+    function parseLinks(segment, keyPrefix = '') {
+        const nodes = [];
+        const linkRegex = /\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g;
+        let lastIndex = 0;
+        let match;
+
+        while ((match = linkRegex.exec(segment)) !== null) {
+            const [fullMatch, linkText, href] = match;
+            if (match.index > lastIndex) {
+                nodes.push(segment.slice(lastIndex, match.index));
+            }
+            nodes.push(
+                <a
+                    key={`${keyPrefix}link-${match.index}`}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline text-green hover:opacity-80"
+                >
+                    {linkText}
+                </a>
+            );
+            lastIndex = match.index + fullMatch.length;
         }
-        return part;
+
+        if (lastIndex < segment.length) {
+            nodes.push(segment.slice(lastIndex));
+        }
+
+        return nodes;
+    }
+
+    // First split by bold regions so links inside bold remain bold
+    const parts = text.split(/(\*\*[\s\S]*?\*\*)/);
+
+    const result = parts.map((part, index) => {
+        const isBold = part.startsWith('**') && part.endsWith('**');
+        if (isBold) {
+            const inner = part.slice(2, -2);
+            const children = parseLinks(inner, `b-${index}-`);
+            return (
+                <strong key={`bold-${index}`} className="text-accent font-semibold">
+                    {children}
+                </strong>
+            );
+        }
+        // Non-bold text: still parse links
+        return parseLinks(part, `p-${index}-`);
     });
+
+    // Flatten potential nested arrays
+    return result.flat();
 }
 
 function Experience() {
@@ -40,7 +85,7 @@ function Experience() {
             company: "Ulendo Technologies",
             location: "Ann Arbor, Michigan",
             period: "April 2024 - June 2025",
-            description: "Built **production IoT dashboard** in React.js with AWS Amplify managing **100+ manufacturing clients**. Developed desktop app optimizing 3D print paths using Python/OpenCV, improving performance by **80%**. Automated license delivery via **GitHub Actions** and AWS services. Engineered **ESP32 firmware** streaming real-time thermal data through resilient cloud pipeline.",
+            description: "Built the production desktop application **[Ulendo HC](https://www.ulendo.io/solutions/ulendo-hc-desktop)** for LPBF thermal modeling, used by **100+ manufacturing clients**. Developed 3D print path optimization using Python/OpenCV improving performance by **80%**. Automated licensing via **GitHub Actions** and AWS services. Engineered **ESP32 firmware** streaming real-time thermal data through a resilient cloud pipeline.",
             icon: <img src="/icons/ulendo.png" alt="Ulendo Technologies" className="w-full h-full object-contain" />,
             skills: ["React.js/Electron.js", "JavaScript", "Python", "AWS", "C++", "OpenCV", "ESP-IDF", "UART/I2C"]
         },

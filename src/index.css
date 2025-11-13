@@ -407,6 +407,7 @@ html {
     border-radius: inherit;
     opacity: 0;
     transition: opacity 0.3s ease;
+    pointer-events: none; /* Ensure overlay does not block clicks */
   }
   
   .liquid-glass:hover {
