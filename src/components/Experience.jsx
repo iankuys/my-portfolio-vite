@@ -24,7 +24,7 @@ function Experience() {
             period: "August 2025 - Present",
             description: "Building **production-grade AI application** using Node.js, TypeScript, Firebase, and LangChain with **hybrid retrieval pipelines**. Architecting scalable backends, data models, and **async WebSocket workflows** powering multi-user AI interactions. Improving **RAG accuracy, latency, and model reliability** while developing integrations and multimodal capabilities across tools and devices.",
             icon: <img src="/icons/stealth.jpeg" alt="Stealth AI Startup" className="w-full h-full object-contain" />,
-            skills: ["Node.js", "TypeScript", "Firebase", "LangChain", "RAG", "Pinecone", "BM25", "WebSockets"]
+            skills: ["Node.js", "TypeScript", "Firebase", "LangChain", "RAG", "Pinecone", "WebSockets"]
         },
         {
             title: "Founder & Founding Engineer",
