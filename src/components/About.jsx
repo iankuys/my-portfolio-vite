@@ -3,15 +3,12 @@ import { Mail, Github, Linkedin, Download } from 'lucide-react';
 
 // About Section
 function About() {
-    const skills = useMemo(() => [
-        { name: 'Python', icon: '🐍' },
-        { name: 'JavaScript/TypeScript', icon: '⚡' },
-        { name: 'React.js/Vue.js', icon: '⚛️' },
-        { name: 'AWS Cloud Services', icon: '☁️' },
-        { name: 'Flask/FastAPI', icon: '🔥' },
-        { name: 'DevOps', icon: '🚀' },
-        { name: 'C++/C#', icon: '🔧' },
-        { name: 'SQL', icon: '🗄️' },
+    const skillGroups = useMemo(() => [
+        { label: 'AI / ML', icon: '🤖', skills: ['LangChain', 'LangGraph', 'RAG', 'Pinecone', 'Agentic Workflows', 'ReAct'] },
+        { label: 'Languages', icon: '💻', skills: ['TypeScript/JavaScript', 'Python', 'C/C++'] },
+        { label: 'Frameworks', icon: '⚛️', skills: ['React', 'Next.js', 'Vue', 'Node.js', 'FastAPI', 'Flask', 'Electron'] },
+        { label: 'Cloud & DevOps', icon: '☁️', skills: ['AWS', 'GCS', 'Docker', 'Linux', 'WebSockets', 'Git'] },
+        { label: 'Databases', icon: '🗄️', skills: ['Postgres', 'MySQL', 'DynamoDB', 'Firebase', 'Redis'] },
     ], []);
 
     // Simple fade-in animation for skills
@@ -85,15 +82,25 @@ function About() {
                                 <div className="w-1 h-6 bg-gradient-to-b from-purple to-accent mr-3 rounded-full"></div>
                                 <h3 className="text-xl font-bold text-primary">Technical Skills</h3>
                             </div>
-                            <div className="grid grid-cols-2 gap-4">
-                                {skills.map((skill) => (
-                                    <div key={skill.name} className="flex items-center gap-2 p-2 rounded-lg bg-glass border border-soft transition-all duration-300 hover:bg-glass-hover hover:border-accent">
-                                        <span className="text-sm transition-transform duration-300 hover:scale-110">
-                                            {skill.icon}
-                                        </span>
-                                        <span className="font-medium text-primary text-xs font-mono">
-                                            {skill.name}
-                                        </span>
+                            <div className="space-y-5">
+                                {skillGroups.map((group) => (
+                                    <div key={group.label}>
+                                        <div className="flex items-center gap-2 mb-2">
+                                            <span className="text-sm">{group.icon}</span>
+                                            <span className="text-accent font-semibold text-xs font-mono uppercase tracking-wider">
+                                                {group.label}
+                                            </span>
+                                        </div>
+                                        <div className="flex flex-wrap gap-2">
+                                            {group.skills.map((skill) => (
+                                                <span
+                                                    key={skill}
+                                                    className="text-xs font-medium px-3 py-1.5 rounded-full bg-accent-soft text-accent border border-accent/20 hover:border-accent/40 hover:scale-105 transition-all cursor-default font-mono"
+                                                >
+                                                    {skill}
+                                                </span>
+                                            ))}
+                                        </div>
                                     </div>
                                 ))}
                             </div>
