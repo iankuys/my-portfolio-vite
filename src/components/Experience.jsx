@@ -64,19 +64,19 @@ function Experience() {
     const experiences = [
         {
             title: "Founding Engineer",
-            company: "Stealth AI Startup",
+            company: "Archiboost AI",
             location: "San Francisco, California",
             period: "August 2025 - Present",
-            description: "Building **production-grade AI application** using Node.js, TypeScript, Firebase, and LangChain with **hybrid retrieval pipelines**. Architecting scalable backends, data models, and **async WebSocket workflows** powering multi-user AI interactions. Improving **RAG accuracy, latency, and model reliability** while developing integrations and multimodal capabilities across tools and devices.",
-            icon: <img src="/icons/stealth.jpeg" alt="Stealth AI Startup" className="w-full h-full object-contain" />,
-            skills: ["Node.js", "TypeScript", "Firebase", "LangChain", "RAG", "Pinecone", "WebSockets"]
+            description: "Built a **custom DAG-based multi-agent runtime** in TypeScript enabling real-time multi-step LLM workflows with **stateful context management, streaming tool execution, and checkpoint-based pause/resume**. Led design of modular AI reasoning pipelines combining tool orchestration, hybrid retrieval, **OCR/VLM-assisted document understanding**, structured extraction, and citation-grounded outputs. Architected production backend systems with **TypeScript, Postgres, GCS, and WebSockets** supporting collaborative document workflows and real-time agent/user interactions at **100K+ records**.",
+            icon: <img src="/icons/stealth.jpeg" alt="Archiboost AI" className="w-full h-full object-contain" />,
+            skills: ["TypeScript", "Multi-Agent", "LangGraph", "RAG", "Postgres", "GCS", "WebSockets", "OCR/VLM"]
         },
         {
             title: "Founder & Founding Engineer",
             company: "Inflow (Personal AI Startup)",
             location: "Remote, USA",
             period: "June 2025 - August 2025",
-            description: "Built **LLM-powered email triage platform** using LangChain and Pinecone hybrid search for classification, phishing detection, and smart reply generation. Architected backend with **FastAPI, PostgreSQL, Docker, and Temporal** supporting async agent workflows. Developed **Next.js/TypeScript frontend** with WebSocket-driven inbox intelligence and role-based access control.",
+            description: "Built a **RAG system using Pinecone hybrid search** to classify emails, detect phishing, and generate context-aware replies. Architected backend with **FastAPI, PostgreSQL, Docker, and Temporal** to support async, multi-user workflows at scale. Built the frontend in **Next.js/TypeScript** with **WebSocket-driven inbox intelligence**, dashboards, and role-based access control.",
             icon: <img src="/icons/inflow.ico" alt="Inflow Startup" className="w-full h-full object-contain" />,
             skills: ["LangChain", "Pinecone", "FastAPI", "PostgreSQL", "Temporal", "Next.js", "TypeScript", "Docker"]
         },
