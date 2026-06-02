@@ -105,17 +105,6 @@ function About() {
                                 ))}
                             </div>
 
-                            {/* Certifications badge */}
-                            <div className="mt-6 p-3 bg-glass rounded-lg border border-soft">
-                                <div className="flex items-start gap-2">
-                                    <span className="text-sm mt-0.5">🏆</span>
-                                    <div className="flex-1">
-                                        <div className="text-accent font-semibold text-xs font-mono">Certified</div>
-                                        <div className="text-secondary font-mono text-xs leading-tight">AWS Cloud Practitioner</div>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </div>
