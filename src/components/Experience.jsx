@@ -73,7 +73,7 @@ function Experience() {
         },
         {
             title: "Founder & Founding Engineer",
-            company: "Inflow (Personal AI Startup)",
+            company: "Inflow AI",
             location: "Remote, USA",
             period: "June 2025 - August 2025",
             description: "Built a **RAG system using Pinecone hybrid search** to classify emails, detect phishing, and generate context-aware replies. Architected backend with **FastAPI, PostgreSQL, Docker, and Temporal** to support async, multi-user workflows at scale. Built the frontend in **Next.js/TypeScript** with **WebSocket-driven inbox intelligence**, dashboards, and role-based access control.",
