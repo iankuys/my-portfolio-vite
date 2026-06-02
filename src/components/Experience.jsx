@@ -68,7 +68,7 @@ function Experience() {
             location: "San Francisco, California",
             period: "August 2025 - Present",
             description: "Built a **custom DAG-based multi-agent runtime** in TypeScript enabling real-time multi-step LLM workflows with **stateful context management, streaming tool execution, and checkpoint-based pause/resume**. Led design of modular AI reasoning pipelines combining tool orchestration, hybrid retrieval, **OCR/VLM-assisted document understanding**, structured extraction, and citation-grounded outputs. Architected production backend systems with **TypeScript, Postgres, GCS, and WebSockets** supporting collaborative document workflows and real-time agent/user interactions at **100K+ records**.",
-            icon: <img src="/icons/stealth.jpeg" alt="Archiboost AI" className="w-full h-full object-contain" />,
+            icon: <img src="/icons/archiboost.png" alt="Archiboost AI" className="w-full h-full object-contain" />,
             skills: ["TypeScript", "Multi-Agent", "LangGraph", "RAG", "Postgres", "GCS", "WebSockets", "OCR/VLM"]
         },
         {
