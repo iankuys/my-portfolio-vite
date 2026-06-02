@@ -249,7 +249,7 @@ function Experience() {
                     {/* Summary stats section */}
                     <div className="mt-16 grid md:grid-cols-3 gap-6">
                         <div className="liquid-glass p-6 text-center hover-glow">
-                            <div className="text-3xl font-bold text-accent mb-2">3+</div>
+                            <div className="text-3xl font-bold text-accent mb-2">4+</div>
                             <div className="text-muted font-code text-sm">Years Experience</div>
                         </div>
                         <div className="liquid-glass p-6 text-center hover-glow">
