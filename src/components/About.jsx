@@ -4,11 +4,11 @@ import { Mail, Github, Linkedin, Download } from 'lucide-react';
 // About Section
 function About() {
     const skillGroups = useMemo(() => [
-        { label: 'AI / ML', icon: '🤖', skills: ['LangChain', 'LangGraph', 'RAG', 'Pinecone', 'Agentic Workflows', 'ReAct'] },
-        { label: 'Languages', icon: '💻', skills: ['TypeScript/JavaScript', 'Python', 'C/C++'] },
-        { label: 'Frameworks', icon: '⚛️', skills: ['React', 'Next.js', 'Vue', 'Node.js', 'FastAPI', 'Flask', 'Electron'] },
-        { label: 'Cloud & DevOps', icon: '☁️', skills: ['AWS', 'GCS', 'Docker', 'Linux', 'WebSockets', 'Git'] },
-        { label: 'Databases', icon: '🗄️', skills: ['Postgres', 'MySQL', 'DynamoDB', 'Firebase', 'Redis'] },
+        { label: 'AI / ML', skills: ['LangChain', 'LangGraph', 'RAG', 'Pinecone', 'Agentic Workflows', 'ReAct'] },
+        { label: 'Languages', skills: ['TypeScript/JavaScript', 'Python', 'C/C++'] },
+        { label: 'Frameworks', skills: ['React', 'Next.js', 'Vue', 'Node.js', 'FastAPI', 'Flask', 'Electron'] },
+        { label: 'Cloud & DevOps', skills: ['AWS', 'GCS', 'Docker', 'Linux', 'WebSockets', 'Git'] },
+        { label: 'Databases', skills: ['Postgres', 'MySQL', 'DynamoDB', 'Firebase', 'Redis'] },
     ], []);
 
     // Simple fade-in animation for skills
@@ -58,13 +58,13 @@ function About() {
                             </div>
                             <div className="space-y-4 text-secondary leading-relaxed text-sm text-left">
                                 <p className="transition-all duration-300 hover:text-primary">
-                                    I'm a <span className="text-accent font-semibold">software engineer</span>, gamer 🎮, and future founder 🚀 with <span className="text-green font-semibold">3+ years of experience</span> building fast, intuitive software that ships and scales.
+                                    I'm a <span className="text-accent font-semibold">software engineer</span>, gamer, and future founder with <span className="text-green font-semibold">3+ years of experience</span> building fast, intuitive software that ships and scales.
                                 </p>
                                 <p className="transition-all duration-300 hover:text-primary">
                                     I’ve thrived in fast-moving startups where ownership is everything. I'm relentlessly driven, always leveling up in new tech, and pushing to grow as both an engineer and future leader.
                                 </p>
                                 <p className="transition-all duration-300 hover:text-primary">
-                                    Outside of work, I’m <span className="text-green font-semibold">top 1% in Counter-Strike 2</span> 🧠, an EDM head 🎧, and a dedicated gym rat 🏋️‍♂️.
+                                    Outside of work, I’m <span className="text-green font-semibold">top 1% in Counter-Strike 2</span>, an EDM head, and a dedicated gym rat.
                                 </p>
                                 <p className="transition-all duration-300 hover:text-primary">
                                     I love connecting with people who think big. Lately, I’ve been deep in <span className="text-purple font-semibold">AI workflows and prompt design</span>, shaping what’s next, one build at a time.
@@ -86,7 +86,7 @@ function About() {
                                 {skillGroups.map((group) => (
                                     <div key={group.label}>
                                         <div className="flex items-center gap-2 mb-2">
-                                            <span className="text-sm">{group.icon}</span>
+                                            <span className="w-1 h-3 bg-accent/60 rounded-full"></span>
                                             <span className="text-accent font-semibold text-xs font-mono uppercase tracking-wider">
                                                 {group.label}
                                             </span>
