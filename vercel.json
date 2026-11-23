@@ -1,0 +1,9 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/((?!assets/|projects/|ianku/|icons/).*)",
+      "destination": "/index.html"
+    }
+  ]
+}

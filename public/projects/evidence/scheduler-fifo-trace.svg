@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="460" viewBox="0 0 1200 460" role="img" aria-labelledby="title desc">
+<title id="title">Recorded FIFO scheduling trace</title><desc id="desc">Actual first six seconds of an unchanged C++ Pthreads scheduler baseline. Thread zero misses its second iteration deadline at two seconds, completing at 2.903 seconds.</desc>
+<rect width="1200" height="460" fill="#f8f7f4"/><g font-family="Arial, sans-serif">
+<text x="42" y="44" font-size="26" fill="#202c36" font-weight="600" >FIFO execution trace</text>
+<text x="42" y="73" font-size="14" fill="#69747e" font-weight="400" >Unchanged C++ / Pthreads source · recorded locally · first 6 seconds</text>
+<line x1="150.0" y1="110" x2="150.0" y2="365" stroke="#d9dfdf"/>
+<text x="150.0" y="100" font-size="13" fill="#68737c" font-weight="400" text-anchor="middle">0s</text>
+<line x1="316.66666666666663" y1="110" x2="316.66666666666663" y2="365" stroke="#d9dfdf"/>
+<text x="316.66666666666663" y="100" font-size="13" fill="#68737c" font-weight="400" text-anchor="middle">1s</text>
+<line x1="483.3333333333333" y1="110" x2="483.3333333333333" y2="365" stroke="#d9dfdf"/>
+<text x="483.3333333333333" y="100" font-size="13" fill="#68737c" font-weight="400" text-anchor="middle">2s</text>
+<line x1="650.0" y1="110" x2="650.0" y2="365" stroke="#d9dfdf"/>
+<text x="650.0" y="100" font-size="13" fill="#68737c" font-weight="400" text-anchor="middle">3s</text>
+<line x1="816.6666666666666" y1="110" x2="816.6666666666666" y2="365" stroke="#d9dfdf"/>
+<text x="816.6666666666666" y="100" font-size="13" fill="#68737c" font-weight="400" text-anchor="middle">4s</text>
+<line x1="983.3333333333333" y1="110" x2="983.3333333333333" y2="365" stroke="#d9dfdf"/>
+<text x="983.3333333333333" y="100" font-size="13" fill="#68737c" font-weight="400" text-anchor="middle">5s</text>
+<line x1="1150.0" y1="110" x2="1150.0" y2="365" stroke="#d9dfdf"/>
+<text x="1150.0" y="100" font-size="13" fill="#68737c" font-weight="400" text-anchor="middle">6s</text>
+<text x="42" y="152" font-size="16" fill="#313e47" font-weight="500" >Thread 0</text>
+<line x1="150" y1="166" x2="1150" y2="166" stroke="#e2e6e5"/>
+<rect x="150.000" y="130" width="33.333" height="36" rx="3" fill="#3977a2"><title>Thread 0, iteration 1: 0–200 ms</title></rect>
+<rect x="600.500" y="130" width="33.333" height="36" rx="3" fill="#b9614f"><title>Thread 0, iteration 2: 2703–2903 ms</title></rect>
+<text x="42" y="214" font-size="16" fill="#313e47" font-weight="500" >Thread 1</text>
+<line x1="150" y1="228" x2="1150" y2="228" stroke="#e2e6e5"/>
+<rect x="183.333" y="192" width="83.500" height="36" rx="3" fill="#537c65"><title>Thread 1, iteration 1: 200–701 ms</title></rect>
+<text x="225.08333333333331" y="215" font-size="13" fill="white" font-weight="400" text-anchor="middle">i1</text>
+<rect x="633.833" y="192" width="83.500" height="36" rx="3" fill="#537c65"><title>Thread 1, iteration 2: 2903–3404 ms</title></rect>
+<text x="675.5833333333333" y="215" font-size="13" fill="white" font-weight="400" text-anchor="middle">i2</text>
+<rect x="1000.167" y="192" width="83.500" height="36" rx="3" fill="#537c65"><title>Thread 1, iteration 3: 5101–5602 ms</title></rect>
+<text x="1041.9166666666665" y="215" font-size="13" fill="white" font-weight="400" text-anchor="middle">i3</text>
+<text x="42" y="276" font-size="16" fill="#313e47" font-weight="500" >Thread 2</text>
+<line x1="150" y1="290" x2="1150" y2="290" stroke="#e2e6e5"/>
+<rect x="266.833" y="254" width="166.833" height="36" rx="3" fill="#a47b3f"><title>Thread 2, iteration 1: 701–1702 ms</title></rect>
+<text x="350.25" y="277" font-size="13" fill="white" font-weight="400" text-anchor="middle">i1</text>
+<rect x="833.333" y="254" width="166.833" height="36" rx="3" fill="#a47b3f"><title>Thread 2, iteration 2: 4100–5101 ms</title></rect>
+<text x="916.7499999999999" y="277" font-size="13" fill="white" font-weight="400" text-anchor="middle">i2</text>
+<text x="42" y="338" font-size="16" fill="#313e47" font-weight="500" >Thread 3</text>
+<line x1="150" y1="352" x2="1150" y2="352" stroke="#e2e6e5"/>
+<rect x="433.667" y="316" width="166.833" height="36" rx="3" fill="#8871a3"><title>Thread 3, iteration 1: 1702–2703 ms</title></rect>
+<text x="517.0833333333333" y="339" font-size="13" fill="white" font-weight="400" text-anchor="middle">i1</text>
+<line x1="483.333" y1="116" x2="483.333" y2="170" stroke="#b9614f" stroke-width="2" stroke-dasharray="4 4"/>
+<text x="491.3333333333333" y="124" font-size="12" fill="#a64b3c" font-weight="400" >T0 deadline</text>
+<rect x="42" y="389" width="10" height="10" fill="#b9614f"/>
+<text x="62" y="399" font-size="15" fill="#823f34" font-weight="500" >T0 iteration 2: deadline 2,000 ms → completed 2,903 ms</text>
+<text x="42" y="431" font-size="12" fill="#737c83" font-weight="400" >Source: iankuys/Thread-Scheduling · FIFO baseline log · wall-clock measurements vary between runs</text>
+</g></svg>
