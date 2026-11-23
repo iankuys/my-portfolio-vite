@@ -2,7 +2,7 @@
 
 Date: November 23, 2026
 
-Status: Proposed design for review. Application code is unchanged.
+Status: Implemented on `feat/research-portfolio-overhaul`; see `docs/portfolio-quality-assurance.md` for verification. The proposals below record the approved design direction.
 
 ## Intent and audience
 

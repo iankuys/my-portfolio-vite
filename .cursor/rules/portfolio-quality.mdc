@@ -1,0 +1,18 @@
+---
+description: Verify portfolio behavior and visual fidelity after every meaningful UI change
+alwaysApply: true
+---
+
+# Portfolio quality
+
+The user requires thorough testing and comparison with Timo Tsui's portfolio after portfolio changes.
+
+- Audience: computer science and AI admissions and research readers. Exclude MKR website and Archiboost project.
+- Preserve the content-first Home, Cabinet/Field catalogue, project reading pages, figure viewer, and About experience.
+- Run `npm test`, `npm run lint`, `npm run build`, and `npm run test:build` after changes that affect them.
+- Start `npm run preview` and run `node scripts/check-preview.mjs` to verify real static routes, 404 status, assets, and video range delivery.
+- Use supported browser tools to test affected flows: filters (OR within a row, AND across rows), empty states, query/deep links, mat/theme persistence, shuffle, Back/Forward and return scroll, viewer arrows/Escape/focus, recordings, CV, and unknown routes.
+- Compare the relevant page with https://www.timotsui.com/ and its Work/project/About pages, or the saved reference captures. Check typography, whitespace, grid density, restrained styling, and feature behavior; do not substitute a generic landing page.
+- Check desktop and narrow layouts; the map may scroll within its region, but the page must not overflow. Keep navigation and CV accessible.
+- Save screenshots of representative changed pages and states. Report any verification limit instead of claiming an unavailable browser check passed.
+- Ground project claims, dates, collaboration, and measurements in evidence. Keep prototype limits and private source status accurate; do not invent results.

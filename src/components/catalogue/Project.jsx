@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { projects, sections } from "../../data/projects.js";
-import { Link, useNavigation } from "../../lib/navigation.jsx";
+import { Link } from "../../lib/navigation.jsx";
+import { useNavigation } from "../../lib/navigation-context.js";
 import { ProjectImage } from "./Shared.jsx";
 import Lightbox from "./Lightbox.jsx";
 export default function Project({ project }) {
@@ -40,13 +41,7 @@ export default function Project({ project }) {
       </dl>
       <p className="project-context mono">{project.context}</p>
       <figure className="project-cover">
-        <button aria-label="Enlarge cover image" onClick={() => setViewer(0)}>
-          <ProjectImage project={project} />
-        </button>
-        <figcaption>{project.figures[0].caption}</figcaption>
-      </figure>
-      {project.figures[0].video && (
-        <div className="recording">
+        {project.figures[0].video ? (
           <video
             controls
             preload="none"
@@ -55,11 +50,24 @@ export default function Project({ project }) {
           >
             <source src={project.figures[0].video} type="video/mp4" />
           </video>
-          <p className="mono secondary">
-            Original project recording · no audio
-          </p>
-        </div>
-      )}
+        ) : (
+          <button aria-label="Enlarge cover image" onClick={() => setViewer(0)}>
+            <ProjectImage project={project} />
+          </button>
+        )}
+        <figcaption>
+          {project.figures[0].caption}
+          {project.figures[0].video && (
+            <button
+              className="text-button cover-still"
+              aria-label="Enlarge cover image"
+              onClick={() => setViewer(0)}
+            >
+              Enlarge still image
+            </button>
+          )}
+        </figcaption>
+      </figure>
       {project.figures[0].animation && (
         <details className="recording animation-recording">
           <summary>View original demonstration</summary>

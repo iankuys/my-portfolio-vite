@@ -15,6 +15,14 @@ const sample = [
   { section: "SY", fields: ["Concurrency", "Software"], media: ["Experiment"] },
   { section: "AI", fields: ["Machine learning"], media: ["Experiment"] },
 ];
+test("unknown filter values are discarded while recognized selections remain removable", () => {
+  const s = parseWorkSearch(
+    "?section=NOPE,AI&field=Ghost,Agents&medium=Unknown,Web",
+  );
+  assert.deepEqual(s.sections, ["AI"]);
+  assert.deepEqual(s.fields, ["Agents"]);
+  assert.deepEqual(s.media, ["Web"]);
+});
 test("catalogue accounts for all 22 accepted projects and excludes rejected work", () => {
   assert.equal(projects.length, 22);
   assert.equal(new Set(projects.map((p) => p.slug)).size, 22);

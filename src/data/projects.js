@@ -77,6 +77,10 @@ export const projects = [
         "Temporal workflows represent classification, reclassification, and feedback processing. A separate workflow executor orders steps by their dependencies and passes outputs to subsequent steps. This separates ingestion, model work, persistence, and presentation.",
       ),
       b(
+        "My part",
+        "As founder and founding engineer, I built the FastAPI/PostgreSQL backend and Next.js inbox, including WebSocket-driven updates and AI email workflows.",
+      ),
+      b(
         "Engineering focus",
         "Intermediate state matters: a message may have been fetched but not classified, a reply may be generated but not accepted, and a background operation may still be running. The repository makes those stages inspectable through separate services, records, and progress components.",
       ),
@@ -394,6 +398,8 @@ export const projects = [
     ],
     {
       tech: ["Python", "Flask", "Raspberry Pi", "OpenCV"],
+      yearNote:
+        "UC Irvine project, March–June 2022, as documented in the original portfolio.",
       figures: [
         {
           src: "/projects/evidence/curtains-poster.webp",
@@ -429,6 +435,10 @@ export const projects = [
         "How it works",
         "Fabric.js supplies the interactive canvas. The implementation builds points and connecting lines, responds to mouse and object-movement events, and recalculates polygon area from edited coordinates.",
         "The repository identifies this as a feature originally developed for pysegapp. The technical subject is the connection between manual correction, canvas geometry, and a live area result.",
+      ),
+      b(
+        "My part",
+        "I developed the manual boundary-editing and dynamic area-calculation feature for pysegapp, connecting canvas interactions to polygon geometry.",
       ),
       b(
         "Measurement scope",
@@ -478,6 +488,10 @@ export const projects = [
         "How it works",
         "R Shiny reactive expressions represent demographic, clinical, and specimen-related filters. A combined-record selection feeds distribution plots and a download handler. The same selected cohort should drive both the charts and exported identifiers. This is a software contribution to a research workflow; the schematic contains no participant records or study findings.",
       ),
+      b(
+        "My part",
+        "At UCI MIND, I built the R Shiny application connected to the tissue repository’s REDCap records, bringing selection, visualization, and export into the research workflow.",
+      ),
     ],
     [
       "Repository records",
@@ -505,6 +519,10 @@ export const projects = [
       b(
         "Implementation and scope",
         "Flask routes coordinate access-key mapping, introductory pages, video pages, survey responses, and completion. REDCap helpers read and write study records. The inspected routing checks completion and previously assigned video data before continuing. This case study concerns the study software, not the research findings; its diagram uses no participant data.",
+      ),
+      b(
+        "My part",
+        "My work at UCI MIND covered the full-stack video-survey application and its research-data integration for remote cognitive studies.",
       ),
     ],
     [
@@ -624,7 +642,7 @@ export const projects = [
           src: "/projects/space-hell/spacehell-2.png",
           alt: "Original Space Hell screenshot with player and enemy projectiles.",
           caption: "Original project screenshot and gameplay recording.",
-          animation: "/projects/space-hell/spacehell.gif",
+          video: "/projects/evidence/space-hell.mp4",
         },
       ],
     },

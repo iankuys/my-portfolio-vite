@@ -7,8 +7,8 @@
     "dev": "vite",
     "build": "vite build && node scripts/prerender.mjs",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "test": "node --test tests/catalogue.test.js",
+    "preview": "node scripts/preview.mjs",
+    "test": "node --test tests/catalogue.test.js tests/history.test.js",
     "test:build": "node --test tests/build.test.js"
   },
   "dependencies": {

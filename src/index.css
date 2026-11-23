@@ -1121,7 +1121,7 @@ button.text-button:hover {
     gap: 20px;
   }
   .site-header .header-cv {
-    display: none;
+    display: flex;
   }
   .theme-switch {
     padding-left: 0;
@@ -1415,5 +1415,23 @@ button.text-button:hover {
   }
   .project-cover img {
     max-height: 400px;
+  }
+}
+.project-cover > video {
+  width: 100%;
+  max-height: 660px;
+  aspect-ratio: 16 / 10;
+  object-fit: contain;
+  background: var(--figure);
+}
+.cover-still {
+  display: block;
+  margin-top: 10px;
+  min-height: 28px;
+  font-size: 0.8rem;
+}
+@media (max-width: 700px) {
+  .project-cover > video {
+    max-height: 450px;
   }
 }

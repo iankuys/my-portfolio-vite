@@ -1,4 +1,9 @@
-import { projects } from "../data/projects.js";
+import {
+  projects,
+  sections,
+  fieldNames,
+  mediumNames,
+} from "../data/projects.js";
 const values = (p, key) => [
   ...new Set(
     p
@@ -16,9 +21,11 @@ export function parseWorkSearch(search = "") {
       ? p.get("rows")
       : "field",
     mat: ["middle", "fill"].includes(p.get("mat")) ? p.get("mat") : "small",
-    sections: values(p, "section"),
-    fields: values(p, "field"),
-    media: values(p, "medium"),
+    sections: values(p, "section").filter((v) =>
+      sections.some((s) => s.id === v),
+    ),
+    fields: values(p, "field").filter((v) => fieldNames.includes(v)),
+    media: values(p, "medium").filter((v) => mediumNames.includes(v)),
   };
 }
 export function workUrl(s) {

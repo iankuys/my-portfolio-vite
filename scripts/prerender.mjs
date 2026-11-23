@@ -9,6 +9,11 @@ const escape = (s) =>
     .replaceAll('"', "&quot;")
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;");
+const meta = (html, attribute, name, value) =>
+  html.replace(
+    new RegExp(`<meta\\s+${attribute}="${name}"\\s+content="[^"]*"\\s*\\/?>`),
+    () => `<meta ${attribute}="${name}" content="${escape(value)}" />`,
+  );
 const template = await readFile("dist/index.html", "utf8");
 const server = await createServer({
   server: { middlewareMode: true },
@@ -22,6 +27,7 @@ try {
     ["/work", "Work"],
     ["/about", "About"],
     ...projects.map((p) => ["/work/" + p.slug, p.title, p.summary]),
+    ["/404", "Page not found"],
   ];
   for (const [path, title, summary] of pages) {
     const desc =
@@ -29,7 +35,10 @@ try {
       "Ian Ku — software engineering, AI systems, and tools for research. Selected projects and implementation notes.";
     const content = renderToString(createElement(App, { initialUrl: path }));
     let html = template
-      .replace('<div id="root"></div>', `<div id="root">${content}</div>`)
+      .replace(
+        '<div id="root"></div>',
+        `<div id="root" data-prerender-url="${escape(path)}">${content}</div>`,
+      )
       .replace(
         /<title>.*?<\/title>/,
         `<title>${escape(title)} — Ian Ku</title>`,
@@ -46,9 +55,23 @@ try {
         /(<meta property="og:description" content=")[^"]*("\s*\/?>)/,
         `$1${escape(desc)}$2`,
       );
+    html = meta(
+      meta(
+        meta(html, "name", "description", desc),
+        "property",
+        "og:title",
+        title + " — Ian Ku",
+      ),
+      "property",
+      "og:description",
+      desc,
+    );
     const dir = "dist" + (path === "/" ? "" : path);
-    await mkdir(dir, { recursive: true });
-    await writeFile(dir + "/index.html", html);
+    if (path === "/404") await writeFile("dist/404.html", html);
+    else {
+      await mkdir(dir, { recursive: true });
+      await writeFile(dir + "/index.html", html);
+    }
   }
   console.log(`Prerendered ${pages.length} static routes.`);
 } finally {

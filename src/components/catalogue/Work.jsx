@@ -10,7 +10,8 @@ import {
   parseWorkSearch,
   workUrl,
 } from "../../lib/catalogue.js";
-import { Link, useNavigation } from "../../lib/navigation.jsx";
+import { Link } from "../../lib/navigation.jsx";
+import { useNavigation } from "../../lib/navigation-context.js";
 import { ProjectCard } from "./Shared.jsx";
 
 function Toggle({ active, onClick, children, ...props }) {
@@ -270,14 +271,14 @@ export default function Work() {
     try {
       const saved = localStorage.getItem("portfolio-mat");
       if (["middle", "fill"].includes(saved))
-        navigate(workUrl({ ...state, mat: saved }), {
-          replace: true,
-          preserveScroll: true,
-        });
+        navigate(
+          workUrl({ ...parseWorkSearch(url.split("?")[1]), mat: saved }),
+          { replace: true, preserveScroll: true },
+        );
     } catch {
       /* Storage is optional. */
     }
-  }, []);
+  }, [navigate, url]);
   const hasFilters =
     state.sections.length + state.fields.length + state.media.length > 0;
   return (
@@ -305,7 +306,7 @@ export default function Work() {
             ))}
           </div>
           <span className="mono result-count" role="status">
-            {visible.length} projects
+            {visible.length} {visible.length === 1 ? "project" : "projects"}
           </span>
         </div>
       </div>
@@ -348,9 +349,20 @@ export default function Work() {
           </button>
         )}
       </div>
-      {state.view === "field" ? (
+      {!visible.length ? (
+        <div className="empty-state">
+          <h2>No project carries all of these together.</h2>
+          <p>Remove a filter or clear the selection to explore the archive.</p>
+          <button
+            className="text-button"
+            onClick={() => change({ sections: [], fields: [], media: [] })}
+          >
+            Clear all filters
+          </button>
+        </div>
+      ) : state.view === "field" ? (
         <FieldView state={state} visible={visible} toggle={toggle} />
-      ) : visible.length ? (
+      ) : (
         <div className={"cabinet mat-" + state.mat}>
           {sections.map((s) => {
             const group = visible.filter((p) => p.section === s.id);
@@ -375,17 +387,6 @@ export default function Work() {
               )
             );
           })}
-        </div>
-      ) : (
-        <div className="empty-state">
-          <h2>No project carries all of these together.</h2>
-          <p>Remove a filter or clear the selection to explore the archive.</p>
-          <button
-            className="text-button"
-            onClick={() => change({ sections: [], fields: [], media: [] })}
-          >
-            Clear all filters
-          </button>
         </div>
       )}
       <p className="archive-note">

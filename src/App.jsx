@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
-import { Router, Link, useNavigation } from "./lib/navigation.jsx";
+import { Router, Link } from "./lib/navigation.jsx";
+import { useNavigation } from "./lib/navigation-context.js";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import Home from "./components/catalogue/Home.jsx";
 import Work from "./components/catalogue/Work.jsx";
 import Project from "./components/catalogue/Project.jsx";
@@ -105,6 +108,8 @@ export default function App({ initialUrl = "/" }) {
   return (
     <Router initialUrl={initialUrl}>
       <Portfolio />
+      <Analytics />
+      <SpeedInsights />
     </Router>
   );
 }

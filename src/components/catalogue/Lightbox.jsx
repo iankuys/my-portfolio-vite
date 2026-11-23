@@ -25,6 +25,20 @@ export default function Lightbox({ project, index, setIndex, onClose }) {
         onClose();
       }}
       onKeyDown={(e) => {
+        if (e.key === "Tab") {
+          const controls = Array.from(
+            dialog.current.querySelectorAll("button:not(:disabled)"),
+          );
+          const first = controls[0];
+          const last = controls[controls.length - 1];
+          if (e.shiftKey && document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          } else if (!e.shiftKey && document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
         if (e.key === "ArrowRight") {
           e.preventDefault();
           setIndex(Math.min(index + 1, project.figures.length - 1));

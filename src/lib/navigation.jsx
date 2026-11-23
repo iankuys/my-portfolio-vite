@@ -1,87 +1,105 @@
-import {
-  createContext,
-  useCallback,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { parseRoute } from "./catalogue.js";
-const Navigation = createContext(null);
+import { nextHistoryState } from "./history.js";
+import { Navigation, useNavigation } from "./navigation-context.js";
+const key = () => Math.random().toString(36).slice(2) + Date.now().toString(36);
 export function Router({ initialUrl = "/", children }) {
   const [url, setUrl] = useState(() =>
     typeof window === "undefined"
       ? initialUrl
       : window.location.pathname + window.location.search,
   );
+  const currentKey = useRef(null),
+    positions = useRef(new Map());
+  const restore = (y, focus = false) =>
+    requestAnimationFrame(() =>
+      requestAnimationFrame(() => {
+        window.scrollTo(0, y);
+        if (focus)
+          document.querySelector("main h1")?.focus({ preventScroll: true });
+      }),
+    );
   const navigate = useCallback((href, options = {}) => {
-    if (typeof window === "undefined") return;
-    const previous = { ...window.history.state, scroll: window.scrollY };
-    window.history.replaceState(previous, "");
-    const from = window.location.pathname;
-    const state = {
-      ...previous,
-      ...options.state,
-      scroll: options.preserveScroll ? window.scrollY : (options.scroll ?? 0),
+    const previous = {
+      ...window.history.state,
+      scroll: window.scrollY,
+      key: currentKey.current || key(),
     };
-    if (from === "/work" && href.startsWith("/work/")) {
-      state.returnTo = from + window.location.search;
-      state.returnScroll = window.scrollY;
-    }
+    positions.current.set(previous.key, previous.scroll);
+    window.history.replaceState(previous, "");
+    const from = window.location.pathname + window.location.search;
+    const state = {
+      ...nextHistoryState(previous, from, href, window.scrollY, options),
+      key: options.replace ? previous.key : key(),
+    };
     window.history[options.replace ? "replaceState" : "pushState"](
       state,
       "",
       href,
     );
+    currentKey.current = state.key;
+    positions.current.set(state.key, state.scroll);
     setUrl(window.location.pathname + window.location.search);
-    requestAnimationFrame(() =>
-      requestAnimationFrame(() => {
-        window.scrollTo(0, state.scroll || 0);
-        if (from !== window.location.pathname)
-          document.querySelector("main h1")?.focus({ preventScroll: true });
-      }),
-    );
+    restore(state.scroll, from.split("?")[0] !== window.location.pathname);
   }, []);
   useEffect(() => {
     const old = window.history.scrollRestoration;
     window.history.scrollRestoration = "manual";
-    const pop = (e) => {
-      setUrl(window.location.pathname + window.location.search);
-      requestAnimationFrame(() =>
-        requestAnimationFrame(() => window.scrollTo(0, e.state?.scroll || 0)),
-      );
+    const initial = {
+      ...window.history.state,
+      key: window.history.state?.key || key(),
     };
+    currentKey.current = initial.key;
+    window.history.replaceState(initial, "");
+    const track = () =>
+      positions.current.set(currentKey.current, window.scrollY);
+    const persist = () =>
+      window.history.replaceState(
+        { ...window.history.state, scroll: window.scrollY },
+        "",
+      );
+    const pop = (e) => {
+      track();
+      const next = e.state || {};
+      currentKey.current = next.key || key();
+      setUrl(window.location.pathname + window.location.search);
+      restore(positions.current.get(currentKey.current) ?? next.scroll ?? 0);
+    };
+    window.addEventListener("scroll", track, { passive: true });
+    window.addEventListener("pagehide", persist);
     window.addEventListener("popstate", pop);
     return () => {
+      window.removeEventListener("scroll", track);
+      window.removeEventListener("pagehide", persist);
       window.removeEventListener("popstate", pop);
       window.history.scrollRestoration = old;
     };
   }, []);
-  const path = url.split("?")[0];
-  const route = parseRoute(path);
-  useEffect(() => {
-    const title =
-      route.project?.title ||
+  const path = url.split("?")[0],
+    route = parseRoute(path);
+  const title =
+    (route.project?.title ||
       {
         home: "Computer science & AI",
         work: "Work",
         about: "About",
         "not-found": "Page not found",
-      }[route.page];
-    document.title = title + " — Ian Ku";
-    const description =
-      route.project?.summary ||
-      "Ian Ku — software engineering, AI systems, and tools for research. Selected projects and implementation notes.";
+      }[route.page]) + " — Ian Ku";
+  const description =
+    route.project?.summary ||
+    "Ian Ku — software engineering, AI systems, and tools for research. Selected projects and implementation notes.";
+  useEffect(() => {
+    document.title = title;
     document
       .querySelector('meta[name="description"]')
       ?.setAttribute("content", description);
-  }, [url]);
+  }, [title, description]);
   return (
     <Navigation.Provider value={{ url, path, route, navigate }}>
       {children}
     </Navigation.Provider>
   );
 }
-export const useNavigation = () => useContext(Navigation);
 export function Link({ href, onClick, children, ...props }) {
   const { navigate } = useNavigation();
   return (
