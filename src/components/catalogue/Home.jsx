@@ -2,7 +2,7 @@ import { useState } from "react";
 import { projects, featuredSlugs } from "../../data/projects.js";
 import { selectProjects } from "../../lib/catalogue.js";
 import { Link } from "../../lib/navigation.jsx";
-import { ProjectCard } from "./Shared.jsx";
+import ProjectIndex from "./ProjectIndex.jsx";
 const selected = featuredSlugs.map((slug) =>
   projects.find((p) => p.slug === slug),
 );
@@ -20,11 +20,7 @@ export default function Home() {
   return (
     <main id="main" className="page home-page">
       <section className="intro">
-        <h1 tabIndex="-1">
-          Computer science
-          <br />
-          and AI, in practice<span className="accent">.</span>
-        </h1>
+        <h1 tabIndex="-1">Computer science & AI.</h1>
         <div className="intro__bottom">
           <p className="intro__description">
             I’m Ian Ku, a software engineer interested in AI systems, machine
@@ -43,21 +39,17 @@ export default function Home() {
                 B.S. Computer Engineering, University of California, Irvine
               </dd>
             </div>
-            <div>
-              <dt>On this site</dt>
-              <dd>Selected projects, implementation notes, and experiments</dd>
-            </div>
           </dl>
         </div>
       </section>
       <section className="selected-work" aria-labelledby="selected-title">
         <div className="selected-heading">
           <div>
-            <h2 id="selected-title">From the archive</h2>
+            <h2 id="selected-title">Selected projects</h2>
             <p className="mono secondary" aria-live="polite">
-              Trial {String(trial + 1).padStart(3, "0")}{" "}
+              Selection {String(trial + 1).padStart(2, "0")}{" "}
               <span className="selection-detail">
-                · n = 8 ·{" "}
+                · 8 projects ·{" "}
                 {trial
                   ? "sampled from the archive"
                   : "6 selected, 2 from the archive"}
@@ -67,22 +59,15 @@ export default function Home() {
           <button
             className="shuffle"
             onClick={() => setTrial((t) => t + 1)}
-            aria-label="Embrace randomness"
+            aria-label="Shuffle selected projects"
           >
-            <span className="shuffle__mark">✳</span>
-            <span>
-              Embrace
-              <br />
-              randomness
-            </span>
-            <small>Run trial {String(trial + 2).padStart(3, "0")}</small>
+            Shuffle selection
           </button>
         </div>
-        <div className="project-grid mat-small">
-          {shown.map((p) => (
-            <ProjectCard key={p.slug} project={p} summary />
-          ))}
-        </div>
+        <ProjectIndex
+          groups={[{ id: "selected", projects: shown }]}
+          label="Selected projects"
+        />
         <Link className="all-projects" href="/work">
           All {projects.length} projects
         </Link>

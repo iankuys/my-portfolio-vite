@@ -1,18 +1,19 @@
 ---
-description: Verify portfolio behavior and visual fidelity after every meaningful UI change
+description: Verify portfolio behavior and Quiet visual direction after every meaningful UI change
 alwaysApply: true
 ---
 
 # Portfolio quality
 
-The user requires thorough testing and comparison with Timo Tsui's portfolio after portfolio changes.
+The user requires thorough testing after portfolio changes. Quiet is the selected visual direction; Timo's saved reference remains the functionality comparison.
 
 - Audience: computer science and AI admissions and research readers. Exclude MKR website and Archiboost project.
-- Preserve the content-first Home, Cabinet/Field catalogue, project reading pages, figure viewer, and About experience.
+- Preserve the content-first Home, Cabinet/Field catalogue, project reading pages, figure viewer, and About experience. Cabinet now uses a Quiet-style project list with a large desktop preview and inline phone thumbnails.
 - Run `npm test`, `npm run lint`, `npm run build`, and `npm run test:build` after changes that affect them.
 - Start `npm run preview` and run `node scripts/check-preview.mjs` to verify real static routes, 404 status, assets, and video range delivery.
 - Use supported browser tools to test affected flows: filters (OR within a row, AND across rows), empty states, query/deep links, mat/theme persistence, shuffle, Back/Forward and return scroll, viewer arrows/Escape/focus, recordings, CV, and unknown routes.
-- Compare the relevant page with https://www.timotsui.com/ and its Work/project/About pages, or the saved reference captures. Check typography, whitespace, grid density, restrained styling, and feature behavior; do not substitute a generic landing page.
+- Compare visuals with https://demo-quiet.semirare.com/ or its saved captures: Literata, compact introductions, restrained paper/charcoal palette, fine rules, and the split project index. Compare functionality with the saved Timo captures. The user explicitly requested a distinct identity, so do not restore Timo's drafting grid, huge display headline, circular shuffle, or boxed thumbnail catalogue.
+- Test pointer and keyboard preview changes, filtering/shuffling away the previewed project, useful default figures, and touch navigation without hover. Keep Small/Middle/Fill framing effective on desktop previews and phone thumbnails.
 - Check desktop and narrow layouts; the map may scroll within its region, but the page must not overflow. Keep navigation and CV accessible.
 - Save screenshots of representative changed pages and states. Report any verification limit instead of claiming an unavailable browser check passed.
 - Ground project claims, dates, collaboration, and measurements in evidence. Keep prototype limits and private source status accurate; do not invent results.

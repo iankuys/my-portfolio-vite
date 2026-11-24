@@ -12,7 +12,7 @@ import {
 } from "../../lib/catalogue.js";
 import { Link } from "../../lib/navigation.jsx";
 import { useNavigation } from "../../lib/navigation-context.js";
-import { ProjectCard } from "./Shared.jsx";
+import ProjectIndex from "./ProjectIndex.jsx";
 
 function Toggle({ active, onClick, children, ...props }) {
   return (
@@ -363,31 +363,17 @@ export default function Work() {
       ) : state.view === "field" ? (
         <FieldView state={state} visible={visible} toggle={toggle} />
       ) : (
-        <div className={"cabinet mat-" + state.mat}>
-          {sections.map((s) => {
-            const group = visible.filter((p) => p.section === s.id);
-            return (
-              group.length > 0 && (
-                <section
-                  key={s.id}
-                  className="work-section"
-                  aria-labelledby={"section-" + s.id}
-                >
-                  <h2 id={"section-" + s.id}>
-                    <span className="mono">{s.id}</span>
-                    {s.name}
-                    <span className="mono section-count">{group.length}</span>
-                  </h2>
-                  <div className="project-grid">
-                    {group.map((p) => (
-                      <ProjectCard key={p.slug} project={p} />
-                    ))}
-                  </div>
-                </section>
-              )
-            );
-          })}
-        </div>
+        <ProjectIndex
+          mat={state.mat}
+          groups={sections.map((section) => ({
+            id: section.id,
+            title: section.name,
+            projects: visible.filter(
+              (project) => project.section === section.id,
+            ),
+          }))}
+          label="Project catalogue"
+        />
       )}
       <p className="archive-note">
         Years indicate the source archive date, except where the original

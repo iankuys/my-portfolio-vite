@@ -45,15 +45,16 @@ export function ProjectCard({ project, summary = false }) {
 export function Bulb() {
   return (
     <svg
-      width="26"
-      height="30"
-      viewBox="0 0 20 24"
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
       aria-hidden="true"
       fill="none"
       stroke="currentColor"
       strokeWidth="1.2"
     >
-      <path d="M6 17c0-4-3-4-3-8a7 7 0 0 1 14 0c0 4-3 4-3 8ZM7 20h6m-5 3h4M10 0v-2M0 3l-2-2m22 2 2-2M-1 9h-2m24 0h2" />
+      <circle cx="12" cy="12" r="8" />
+      <path d="M12 4a8 8 0 0 1 0 16Z" fill="currentColor" stroke="none" />
     </svg>
   );
 }

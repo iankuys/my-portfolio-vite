@@ -71,7 +71,7 @@ function Portfolio() {
             onClick={toggle}
           >
             <Bulb />
-            <span>{theme === "dark" ? "Lights on" : "Lights off"}</span>
+            <span>{theme === "dark" ? "Light" : "Dark"}</span>
           </button>
         </nav>
       </header>
