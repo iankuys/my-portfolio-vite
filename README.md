@@ -29,7 +29,7 @@ npm run test:build
 node scripts/check-preview.mjs
 ```
 
-Follow `.cursor/rules/portfolio-quality.mdc` for browser, responsive, and reference-comparison checks. The latest verification is recorded in `docs/portfolio-quality-assurance.md`.
+Follow `.cursor/rules/portfolio-quality.mdc` for browser, responsive, and reference-comparison checks. The latest verification is recorded in `docs/quiet-portfolio-quality-assurance.md`.
 
 ## Content and structure
 
