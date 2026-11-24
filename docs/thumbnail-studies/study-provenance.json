@@ -1,0 +1,54 @@
+{
+  "type": "Throwaway visual study; no portfolio product code changed",
+  "themeSource": "src/index.css at c773b094ba8d49157e8065eb656dcd369634c805",
+  "scheduler": {
+    "source": "work/evidence/scheduler-fifo-intervals.json",
+    "policy": "FIFO",
+    "windowMs": 6000,
+    "limit": "One local run of unchanged source; no successful EDF/RM comparison claimed"
+  },
+  "covers": [
+    {
+      "slug": "smart-curtains",
+      "src": "real/smart-curtains.webp",
+      "kind": "technical",
+      "caption": "Original mechanism CAD rendering, taken from the archived project demonstration."
+    },
+    {
+      "slug": "manual-segmentation",
+      "src": "real/manual-seg.webp",
+      "kind": "technical",
+      "caption": "Polygon editing and live area calculation in the original recorded demo."
+    },
+    {
+      "slug": "thread-scheduling",
+      "src": "real/scheduler-cover.svg",
+      "kind": "technical",
+      "caption": "First six seconds of an actual FIFO run. T0 iteration 2 finished at 2.903 s against a 2.000 s deadline."
+    },
+    {
+      "slug": "ml-experiments",
+      "src": "real/carlength_vs_price_regresion_line.png",
+      "kind": "technical",
+      "caption": "Archived regression plot from the repository. The experiment has not been rerun here."
+    },
+    {
+      "slug": "object-detection",
+      "src": "real/object-detection.webp",
+      "kind": "photograph",
+      "caption": "Actual Objectron demo frame showing the detected cup and its 3D box."
+    },
+    {
+      "slug": "space-hell",
+      "src": "real/space-hell-gameplay.png",
+      "kind": "game",
+      "caption": "Actual gameplay, extracted at 15 seconds in the original recording."
+    },
+    {
+      "slug": "poker",
+      "src": "real/poker.png",
+      "kind": "application",
+      "caption": "Original desktop application screenshot."
+    }
+  ]
+}

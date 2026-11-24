@@ -1,0 +1,845 @@
+{
+  "checkedOn": "2026-11-24",
+  "scope": "23 source repositories for the 22 current portfolio entries. Default-branch trees and available root READMEs inspected. Asset absence is not proof that an app cannot be captured.",
+  "timo": {
+    "generationTool": "Not established by the inspected pages.",
+    "observations": [
+      {
+        "url": "https://www.timotsui.com/work/point_cloud_classification",
+        "observation": "Cover combines a point cloud, occupied pillars, and a bird’s-eye grid. Page identifies ModelNet as the source of point-cloud models."
+      },
+      {
+        "url": "https://www.timotsui.com/work/scene_layout_agents",
+        "observation": "Cover compares reconstructed 3D scenes. Project itself uses world models; this does not establish how every portfolio graphic was authored."
+      },
+      {
+        "url": "https://www.timotsui.com/work/llm_ingestion_pipeline",
+        "observation": "Cover caption explicitly identifies invented data; other figures include invented output examples."
+      }
+    ]
+  },
+  "repositories": [
+    {
+      "repo": "Inflow",
+      "source": "https://github.com/iankuys/Inflow",
+      "treeSha": "c92ed994c8744ef51b877ee1da1e804fdabe76bf",
+      "truncated": false,
+      "readmeInspected": true,
+      "projectMedia": [
+        {
+          "path": "frontend/public/file.svg",
+          "sha": "004145cddf3f9db91b57b9cb596683c8eb420862",
+          "bytes": 391
+        },
+        {
+          "path": "frontend/public/globe.svg",
+          "sha": "567f17b0d7c7fb662c16d4357dd74830caf2dccb",
+          "bytes": 1035
+        },
+        {
+          "path": "frontend/public/next.svg",
+          "sha": "5174b28c565c285e3e312ec5178be64fbeca8398",
+          "bytes": 1375
+        },
+        {
+          "path": "frontend/public/vercel.svg",
+          "sha": "77053960334e2e34dc584dea8019925c3b4ccca9",
+          "bytes": 128
+        },
+        {
+          "path": "frontend/public/window.svg",
+          "sha": "b2b2a44f6ebc70c450043c05a002e7a93ba5d651",
+          "bytes": 385
+        }
+      ]
+    },
+    {
+      "repo": "linkedin_agent",
+      "source": "https://github.com/iankuys/linkedin_agent",
+      "treeSha": "b5e3196f805d7dc9ccda2e9734a9cfcb513bb78d",
+      "truncated": false,
+      "readmeInspected": true,
+      "projectMedia": []
+    },
+    {
+      "repo": "nlp-and-ml-experiments",
+      "source": "https://github.com/iankuys/nlp-and-ml-experiments",
+      "treeSha": "5032e19c0c344621f4616ce6ae5c1cb081a90ed8",
+      "truncated": false,
+      "readmeInspected": true,
+      "projectMedia": [
+        {
+          "path": "BMI_vs_BloodPressure.png",
+          "sha": "b1f32123d3347b68286790f68c698ffa5a65a71f",
+          "bytes": 30481
+        },
+        {
+          "path": "bmi_vs_bp_regresion_line.png",
+          "sha": "1268869e51fdde8b543aef2ba49b70954cf5fccb",
+          "bytes": 34315
+        },
+        {
+          "path": "carlength_vs_price.png",
+          "sha": "0ec9d29a688c6290a8c57f4d595973dea1584a5a",
+          "bytes": 29696
+        },
+        {
+          "path": "carlength_vs_price_regresion_line.png",
+          "sha": "94580d31b7e69e15ba2de672784bf31aafc3d570",
+          "bytes": 31004
+        },
+        {
+          "path": "carwidth_vs_price.png",
+          "sha": "0ec9d29a688c6290a8c57f4d595973dea1584a5a",
+          "bytes": 29696
+        },
+        {
+          "path": "carwidth_vs_price_regresion_line.png",
+          "sha": "1cf114708028995f46a4c55f9d1093efd728e72b",
+          "bytes": 30213
+        },
+        {
+          "path": "decision_tree.pdf",
+          "sha": "c04a92f7b602c9fdfb0f5d0fd03a43b212dda5c9",
+          "bytes": 74091
+        }
+      ]
+    },
+    {
+      "repo": "obj_detection",
+      "source": "https://github.com/iankuys/obj_detection",
+      "treeSha": "4b812d1b27ffcc0000fc6dd1096ea30b02559a60",
+      "truncated": false,
+      "readmeInspected": true,
+      "projectMedia": [
+        {
+          "path": "objectron_detection.gif",
+          "sha": "32363f1d9ffd7eb7e47800f4acfef26368c7095f",
+          "bytes": 24534866
+        }
+      ]
+    },
+    {
+      "repo": "pdf-analyze-ai",
+      "source": "https://github.com/iankuys/pdf-analyze-ai",
+      "treeSha": "e7025b24bb26e60ce687614fcf5a6278524c5f2b",
+      "truncated": false,
+      "readmeInspected": true,
+      "projectMedia": [
+        {
+          "path": "frontend/public/logo192.png",
+          "sha": "fc44b0a3796c0e0a64c3d858ca038bd4570465d9",
+          "bytes": 5347
+        },
+        {
+          "path": "frontend/public/logo512.png",
+          "sha": "a4e47a6545bc15971f8f63fba70e4013df88a664",
+          "bytes": 9664
+        },
+        {
+          "path": "frontend/src/logo.svg",
+          "sha": "9dfc1c058cebbef8b891c5062be6f31033d7d186",
+          "bytes": 2632
+        }
+      ]
+    },
+    {
+      "repo": "P2PAgent",
+      "source": "https://github.com/iankuys/P2PAgent",
+      "treeSha": "7fcae7b07bb54d0f37f78230a2bffe927a2b5e88",
+      "truncated": false,
+      "readmeInspected": true,
+      "projectMedia": [
+        {
+          "path": "frontend/public/logo192.png",
+          "sha": "fc44b0a3796c0e0a64c3d858ca038bd4570465d9",
+          "bytes": 5347
+        },
+        {
+          "path": "frontend/public/logo512.png",
+          "sha": "a4e47a6545bc15971f8f63fba70e4013df88a664",
+          "bytes": 9664
+        },
+        {
+          "path": "frontend/src/logo.svg",
+          "sha": "9dfc1c058cebbef8b891c5062be6f31033d7d186",
+          "bytes": 2632
+        }
+      ]
+    },
+    {
+      "repo": "Converge",
+      "source": "https://github.com/iankuys/Converge",
+      "treeSha": "13e655b7f79331c2810953bad4ff33a1b44d50da",
+      "truncated": false,
+      "readmeInspected": true,
+      "projectMedia": []
+    },
+    {
+      "repo": "Thread-Scheduling",
+      "source": "https://github.com/iankuys/Thread-Scheduling",
+      "treeSha": "3cf8d974901b25e56a2bb20857bc4274d49bed03",
+      "truncated": false,
+      "readmeInspected": true,
+      "projectMedia": []
+    },
+    {
+      "repo": "building-management-system",
+      "source": "https://github.com/iankuys/building-management-system",
+      "treeSha": "b4720784fea0f3edc111689ff205f536673d887b",
+      "truncated": false,
+      "readmeInspected": true,
+      "projectMedia": []
+    },
+    {
+      "repo": "cv_automated_curtains",
+      "source": "https://github.com/iankuys/cv_automated_curtains",
+      "treeSha": "00d1affabde50b96d0582cc81353324abf1d830d",
+      "truncated": false,
+      "readmeInspected": true,
+      "projectMedia": [
+        {
+          "path": "static/Chi_Class.png",
+          "sha": "d80e7ad3d65fc3577bfaa9e403e668cb23e4cee8",
+          "bytes": 492578
+        },
+        {
+          "path": "static/curtain.png",
+          "sha": "df0453a1dd6202e017935f6cddf3c06251de4550",
+          "bytes": 1813367
+        },
+        {
+          "path": "static/output-onlinepngtools.png",
+          "sha": "49f69885b2ba54729e81e91deb0f85d5f075dd51",
+          "bytes": 461781
+        }
+      ]
+    },
+    {
+      "repo": "manual-seg",
+      "source": "https://github.com/iankuys/manual-seg",
+      "treeSha": "8862b20aca195d3bff0dd0abbfb57cb0a73f9f67",
+      "truncated": false,
+      "readmeInspected": true,
+      "projectMedia": [
+        {
+          "path": "manual segmentation with dynamic area calc.gif",
+          "sha": "27ebe1aa969b30dd219b7fafa7e24bae2ee954be",
+          "bytes": 945270
+        }
+      ]
+    },
+    {
+      "repo": "tissue-repo-discovery",
+      "source": "https://github.com/iankuys/tissue-repo-discovery",
+      "treeSha": "47b4acac1cc3b3ec5d0da6e27ae71d04ec48acc1",
+      "truncated": false,
+      "readmeInspected": true,
+      "projectMedia": []
+    },
+    {
+      "repo": "c2c_survey_app",
+      "source": "https://github.com/iankuys/c2c_survey_app",
+      "treeSha": "79a94613c90da9b6a0212eaf2cc9f29949be534d",
+      "truncated": false,
+      "readmeInspected": true,
+      "projectMedia": [
+        {
+          "path": "static/UCI16_MIND_Full_ctr_blue.png",
+          "sha": "35298ba7644533bdbcf01c4ed420b44a5800c708",
+          "bytes": 33700
+        },
+        {
+          "path": "static/UCI_C2CRegistry.png",
+          "sha": "c04af429627e4ba83e666c1b5c02ead703c16b6f",
+          "bytes": 19163
+        },
+        {
+          "path": "static/cropped-c2c-32x32.jpg",
+          "sha": "d897adecf1d488f24ca44267dd3766766e9b3aac",
+          "bytes": 991
+        },
+        {
+          "path": "static/dash.svg",
+          "sha": "a06025092006d60aecb99f1cf6dfaf8560df0f6a",
+          "bytes": 147
+        },
+        {
+          "path": "static/progress-0-dot.png",
+          "sha": "e288c757b50e1e6db414e06facb6477d5bfe069d",
+          "bytes": 621
+        },
+        {
+          "path": "static/progress-1-dot.png",
+          "sha": "aeafd6aae801a5f3e0b071cfd4a88d9b74fc3698",
+          "bytes": 635
+        }
+      ]
+    },
+    {
+      "repo": "zigzag_fastapi_backend",
+      "source": "https://github.com/iankuys/zigzag_fastapi_backend",
+      "treeSha": "c95cb62746de900296cb72fcda1cfa4aa0ac23a7",
+      "truncated": false,
+      "readmeInspected": true,
+      "projectMedia": []
+    },
+    {
+      "repo": "zigzag_frontend",
+      "source": "https://github.com/iankuys/zigzag_frontend",
+      "treeSha": "cce1bba7af6657acdbae1020a62f06a7566b63f6",
+      "truncated": false,
+      "readmeInspected": true,
+      "projectMedia": [
+        {
+          "path": "public/mind_logo.png",
+          "sha": "981c8896559721caa95ca1aed782a58007580ea8",
+          "bytes": 18821
+        },
+        {
+          "path": "src/assets/UCI16_MIND_Full_ctr_blue copy.png",
+          "sha": "35298ba7644533bdbcf01c4ed420b44a5800c708",
+          "bytes": 33700
+        },
+        {
+          "path": "src/assets/logo.svg",
+          "sha": "7565660356e5b3723c9c33d508b830c9cfbea29f",
+          "bytes": 276
+        },
+        {
+          "path": "src/assets/spinner.gif",
+          "sha": "0311c86f34fe8f42622568085f0cb8eafd033b84",
+          "bytes": 83146
+        }
+      ]
+    },
+    {
+      "repo": "liveSheets",
+      "source": "https://github.com/iankuys/liveSheets",
+      "treeSha": "4dc41a0f7784942bb7a5c29ffef540a37a0c6340",
+      "truncated": false,
+      "readmeInspected": true,
+      "projectMedia": []
+    },
+    {
+      "repo": "FlaskChatApp",
+      "source": "https://github.com/iankuys/FlaskChatApp",
+      "treeSha": "9e4cbfb86d1ece0f40e46e2e4a392ec4b4f83fcc",
+      "truncated": false,
+      "readmeInspected": true,
+      "projectMedia": []
+    },
+    {
+      "repo": "tcp_chat_app",
+      "source": "https://github.com/iankuys/tcp_chat_app",
+      "treeSha": "e34b378fee713d081018f67c022ded23185000f2",
+      "truncated": false,
+      "readmeInspected": true,
+      "projectMedia": []
+    },
+    {
+      "repo": "AspireChatApp",
+      "source": "https://github.com/iankuys/AspireChatApp",
+      "treeSha": "07d06a017af2fe2b44ad55f7cc7035a8a27a3ff4",
+      "truncated": false,
+      "readmeInspected": false,
+      "projectMedia": [
+        {
+          "path": "FinsysApp.Web/wwwroot/favicon.png",
+          "sha": "8422b59695935d180d11d5dbe99653e711097819",
+          "bytes": 1148
+        }
+      ]
+    },
+    {
+      "repo": "java-swing-calendar",
+      "source": "https://github.com/iankuys/java-swing-calendar",
+      "treeSha": "edf87e1655baf56162ae01192a3bb7b706d88e7b",
+      "truncated": false,
+      "readmeInspected": true,
+      "projectMedia": []
+    },
+    {
+      "repo": "budget_buddy_react_node",
+      "source": "https://github.com/iankuys/budget_buddy_react_node",
+      "treeSha": "d27905640e2974e3ea176774ff96a5623ac1c88e",
+      "truncated": false,
+      "readmeInspected": false,
+      "projectMedia": [
+        {
+          "path": "frontend/public/logo192.png",
+          "sha": "fc44b0a3796c0e0a64c3d858ca038bd4570465d9",
+          "bytes": 5347
+        },
+        {
+          "path": "frontend/public/logo512.png",
+          "sha": "a4e47a6545bc15971f8f63fba70e4013df88a664",
+          "bytes": 9664
+        },
+        {
+          "path": "frontend/src/logo.svg",
+          "sha": "9dfc1c058cebbef8b891c5062be6f31033d7d186",
+          "bytes": 2632
+        }
+      ]
+    },
+    {
+      "repo": "poker",
+      "source": "https://github.com/iankuys/poker",
+      "treeSha": "eca0773a19096927edcf94ae7d6d72d3c8b9d3a1",
+      "truncated": false,
+      "readmeInspected": true,
+      "projectMedia": [
+        {
+          "path": "assets/10_of_clubs.png",
+          "sha": "18af741dbd2d8eb0f8ac494065d50ee8b7bc326a",
+          "bytes": 54676
+        },
+        {
+          "path": "assets/10_of_diamonds.png",
+          "sha": "3bbc4e06bc6042f026761c8c1437a07ad8977c1b",
+          "bytes": 46241
+        },
+        {
+          "path": "assets/10_of_hearts.png",
+          "sha": "3eb83d72c894aaa7490268239c14244f883a61e8",
+          "bytes": 46328
+        },
+        {
+          "path": "assets/10_of_spades.png",
+          "sha": "0b3d29475d9caa3291a68324e87af4790244500c",
+          "bytes": 50453
+        },
+        {
+          "path": "assets/2_of_clubs.png",
+          "sha": "291ed975f29d7873765c9f3259ebad8fd8a9d040",
+          "bytes": 23590
+        },
+        {
+          "path": "assets/2_of_diamonds.png",
+          "sha": "4deee7cc848386b049cafd105cb9a92c8ce2cbcd",
+          "bytes": 19815
+        },
+        {
+          "path": "assets/2_of_hearts.png",
+          "sha": "75a014f364dbbdc00fb4bb8f3f808370f37907b8",
+          "bytes": 20136
+        },
+        {
+          "path": "assets/2_of_spades.png",
+          "sha": "1ce0ffe8b82efc672d92c53d1a0261defc1c8824",
+          "bytes": 21863
+        },
+        {
+          "path": "assets/3_of_clubs.png",
+          "sha": "076ab318aa596a64e8d3d52c2f53f2d3b32999be",
+          "bytes": 29161
+        },
+        {
+          "path": "assets/3_of_diamonds.png",
+          "sha": "8ee0b4b902d308d64b51ec880a0389a34f836dd3",
+          "bytes": 24257
+        },
+        {
+          "path": "assets/3_of_hearts.png",
+          "sha": "8e74673f8222007b4b8a8c82d00d10a782ec7031",
+          "bytes": 24757
+        },
+        {
+          "path": "assets/3_of_spades.png",
+          "sha": "f9e06b4f019efca9dc2011b755404453b5928349",
+          "bytes": 26922
+        },
+        {
+          "path": "assets/4_of_clubs.png",
+          "sha": "8be9e089225fdf93c7be1b51031819fc85054c73",
+          "bytes": 28623
+        },
+        {
+          "path": "assets/4_of_diamonds.png",
+          "sha": "70e82e839b4e29647a5e2fefd7b08f4ca30829f1",
+          "bytes": 24212
+        },
+        {
+          "path": "assets/4_of_hearts.png",
+          "sha": "ceecbfe02f2e1e0af4a64dc457ed46940f954c81",
+          "bytes": 24681
+        },
+        {
+          "path": "assets/4_of_spades.png",
+          "sha": "95abe3e737c3675286b81da0af0d83033ee9d4ff",
+          "bytes": 26409
+        },
+        {
+          "path": "assets/5_of_clubs.png",
+          "sha": "bde9777696e8e8d42402bdeeb6058b7d6605d0a0",
+          "bytes": 34857
+        },
+        {
+          "path": "assets/5_of_diamonds.png",
+          "sha": "bb9252558a0c6a0b3f6b4756e9d1a1c54c43fdb4",
+          "bytes": 29319
+        },
+        {
+          "path": "assets/5_of_hearts.png",
+          "sha": "d923456fe88b17c1ab8d45f11b8d947957732a6c",
+          "bytes": 29804
+        },
+        {
+          "path": "assets/5_of_spades.png",
+          "sha": "53a1aad26c9990b695ed24c1241843eef0a704f0",
+          "bytes": 32219
+        },
+        {
+          "path": "assets/6_of_clubs.png",
+          "sha": "a9660a037257ac7d6ab05604fe896b2e51ac4171",
+          "bytes": 39972
+        },
+        {
+          "path": "assets/6_of_diamonds.png",
+          "sha": "78a80ad06a3705f9035bf3b96a1f047c428ac877",
+          "bytes": 33692
+        },
+        {
+          "path": "assets/6_of_hearts.png",
+          "sha": "361643efc36ed607f3834a502840b858dc0498d9",
+          "bytes": 33457
+        },
+        {
+          "path": "assets/6_of_spades.png",
+          "sha": "40242a718bfbec2252610f21196eaacdb9446884",
+          "bytes": 36854
+        },
+        {
+          "path": "assets/7_of_clubs.png",
+          "sha": "9d6b54554f5792e0bbef4c2fa3fd898cb6354b6f",
+          "bytes": 41174
+        },
+        {
+          "path": "assets/7_of_diamonds.png",
+          "sha": "6ad5f15b51e7b949c825f6ecf1d70a6ba6c8f9ec",
+          "bytes": 34168
+        },
+        {
+          "path": "assets/7_of_hearts.png",
+          "sha": "19b89a2e7e8511b44f824f19172059a0b0bae7a4",
+          "bytes": 34474
+        },
+        {
+          "path": "assets/7_of_spades.png",
+          "sha": "b9f1b93d33e8c81a441df99c3da822631d202c50",
+          "bytes": 37167
+        },
+        {
+          "path": "assets/8_of_clubs.png",
+          "sha": "cec743cbcd188453a8c14edde55147683ae24859",
+          "bytes": 48468
+        },
+        {
+          "path": "assets/8_of_diamonds.png",
+          "sha": "ed1295121de438df71dfed44026046a34ec959ba",
+          "bytes": 40441
+        },
+        {
+          "path": "assets/8_of_hearts.png",
+          "sha": "fb39723cb19cff1271bee430875a3c0d6d570e99",
+          "bytes": 40849
+        },
+        {
+          "path": "assets/8_of_spades.png",
+          "sha": "b6b3b3813dce1260129d482550dbfdd465fca085",
+          "bytes": 44015
+        },
+        {
+          "path": "assets/9_of_clubs.png",
+          "sha": "2174db58e12a0cef03c8f68cfdad9e296f5b31b9",
+          "bytes": 51028
+        },
+        {
+          "path": "assets/9_of_diamonds.png",
+          "sha": "0b933fb0e664b980d3f2668443922062eb083cec",
+          "bytes": 42981
+        },
+        {
+          "path": "assets/9_of_hearts.png",
+          "sha": "7b196d6dc080409b1e7ae97f6bf1e651742fb0ff",
+          "bytes": 43085
+        },
+        {
+          "path": "assets/9_of_spades.png",
+          "sha": "3c3b5ffbc6429e64c97e1f218ca1814e29e1d989",
+          "bytes": 46943
+        },
+        {
+          "path": "assets/ace_of_clubs.png",
+          "sha": "42bf5ec94d627831e095c53dd5480521f771f97d",
+          "bytes": 42481
+        },
+        {
+          "path": "assets/ace_of_diamonds.png",
+          "sha": "79cd3b8a8054644e23619008b58f7b89601a2ec6",
+          "bytes": 36810
+        },
+        {
+          "path": "assets/ace_of_hearts.png",
+          "sha": "b42212405c18f1f72a451f91b354c145089c103f",
+          "bytes": 44136
+        },
+        {
+          "path": "assets/ace_of_spades.png",
+          "sha": "103f56d1a807b12e284d5a73ad01b983f25b879b",
+          "bytes": 61075
+        },
+        {
+          "path": "assets/ace_of_spades2.png",
+          "sha": "fbc3a2dcad00d5ce42aa35839e1f0c57f11d5511",
+          "bytes": 42763
+        },
+        {
+          "path": "assets/black_joker.png",
+          "sha": "000b640bff459b7c6b7f3c319618bf74fba24194",
+          "bytes": 41744
+        },
+        {
+          "path": "assets/card_back.png",
+          "sha": "06e886397ef4d3ffd864871747ffde685c12c438",
+          "bytes": 294843
+        },
+        {
+          "path": "assets/jack_of_clubs.png",
+          "sha": "8bad6105ae106948ae5192677c2627394c442b89",
+          "bytes": 40192
+        },
+        {
+          "path": "assets/jack_of_clubs2.png",
+          "sha": "5e003be2d4c3fc8e67a0f63979c6b9054cd37fd6",
+          "bytes": 208118
+        },
+        {
+          "path": "assets/jack_of_diamonds.png",
+          "sha": "0494785163ee9ee0c4ae2fce8f766893123f2290",
+          "bytes": 34727
+        },
+        {
+          "path": "assets/jack_of_diamonds2.png",
+          "sha": "131a97731b51cca6f26dfb295d5937e964d1ebad",
+          "bytes": 215482
+        },
+        {
+          "path": "assets/jack_of_hearts.png",
+          "sha": "03cdfd473cf24c4924f8923548f674a136dee003",
+          "bytes": 42091
+        },
+        {
+          "path": "assets/jack_of_hearts2.png",
+          "sha": "bf342bcb2963500e8f899222f788fb3e1e08d0ad",
+          "bytes": 260725
+        },
+        {
+          "path": "assets/jack_of_spades.png",
+          "sha": "734e4b173698421021feba0737ff420bd5957a8c",
+          "bytes": 40477
+        },
+        {
+          "path": "assets/jack_of_spades2.png",
+          "sha": "f539c19c6cfc002f9edfec34f8dbbd65227e6249",
+          "bytes": 247507
+        },
+        {
+          "path": "assets/king_of_clubs.png",
+          "sha": "ebde974ab422c88e324cee3dd98f996c86075561",
+          "bytes": 42009
+        },
+        {
+          "path": "assets/king_of_clubs2.png",
+          "sha": "68e57747d7e6d518e438bc1e0b45310abf25cae7",
+          "bytes": 263133
+        },
+        {
+          "path": "assets/king_of_diamonds.png",
+          "sha": "4c9aaf20daf0d9e6f3e47a3f07d7c31f8b0f5725",
+          "bytes": 36412
+        },
+        {
+          "path": "assets/king_of_diamonds2.png",
+          "sha": "e21d6a0a4ad47d87a9830befc68d16cf526f8ae8",
+          "bytes": 266252
+        },
+        {
+          "path": "assets/king_of_hearts.png",
+          "sha": "27d235a34f8be3f00973dbc2758d44028cfb15d1",
+          "bytes": 43728
+        },
+        {
+          "path": "assets/king_of_hearts2.png",
+          "sha": "1d3c468d8e986a15e38d5fb2b9319b17ff183a4b",
+          "bytes": 279570
+        },
+        {
+          "path": "assets/king_of_spades.png",
+          "sha": "b7abc52ac0ba5ac0e0d40b04a8bdc2898f6e7889",
+          "bytes": 42335
+        },
+        {
+          "path": "assets/king_of_spades2.png",
+          "sha": "2edbbc14848662fb5bcde268d046041a25c193a4",
+          "bytes": 201544
+        },
+        {
+          "path": "assets/queen_of_clubs.png",
+          "sha": "949839c1b7b479c9e4cbd8ca83eb74cae235bb77",
+          "bytes": 45004
+        },
+        {
+          "path": "assets/queen_of_clubs2.png",
+          "sha": "7be5f9a96a5188a17e3606907d0076497b902958",
+          "bytes": 285495
+        },
+        {
+          "path": "assets/queen_of_diamonds.png",
+          "sha": "791b273df3aac02ed9e6e425933bab267b51d4f6",
+          "bytes": 39185
+        },
+        {
+          "path": "assets/queen_of_diamonds2.png",
+          "sha": "928f6501da39ba4d00f1bcbb9de2557b50d0dda3",
+          "bytes": 195223
+        },
+        {
+          "path": "assets/queen_of_hearts.png",
+          "sha": "c95e2df0b305416ad7e9a34d6d411d3e9edf1ad1",
+          "bytes": 46831
+        },
+        {
+          "path": "assets/queen_of_hearts2.png",
+          "sha": "21839e681abc17e6ebe6895e9fca39a949d28afc",
+          "bytes": 243233
+        },
+        {
+          "path": "assets/queen_of_spades.png",
+          "sha": "c6c69cac15e3bd155e497bf77c2498d9f4568c26",
+          "bytes": 45431
+        },
+        {
+          "path": "assets/queen_of_spades2.png",
+          "sha": "7983d034ddb7b54e26e36c9141b048bff003bfc0",
+          "bytes": 205872
+        },
+        {
+          "path": "assets/red_joker.png",
+          "sha": "55b3ef9ba552b0be07dcadfae5830a28561408f3",
+          "bytes": 41267
+        }
+      ]
+    },
+    {
+      "repo": "Space-Hell",
+      "source": "https://github.com/iankuys/Space-Hell",
+      "treeSha": "d29c6448d56b9bd3a093a426415acba2b7c1302a",
+      "truncated": false,
+      "readmeInspected": true,
+      "projectMedia": [
+        {
+          "path": "groupGame/groupGame/Textures/bigEnemyBullet.png",
+          "sha": "ea8bc55dd201ada41b29d1addc41bfe467723127",
+          "bytes": 298
+        },
+        {
+          "path": "groupGame/groupGame/Textures/bossEnemy.png",
+          "sha": "390aad0d518cc5cd85c8a6fbead80fb002ef4d47",
+          "bytes": 2191
+        },
+        {
+          "path": "groupGame/groupGame/Textures/bounceEnemy1.png",
+          "sha": "647ef650ab2d30fb348a785ebe29eaef16246594",
+          "bytes": 753
+        },
+        {
+          "path": "groupGame/groupGame/Textures/bouncingEnemyBullet.png",
+          "sha": "783e64a49766058077a65fe03f39d9883074be08",
+          "bytes": 151
+        },
+        {
+          "path": "groupGame/groupGame/Textures/burstEnemy3.png",
+          "sha": "bed6389f074dd3520799f2d3fe28dd3bcdd16467",
+          "bytes": 684
+        },
+        {
+          "path": "groupGame/groupGame/Textures/circleEnemy2.png",
+          "sha": "0c2bf3a364b765b70a34d7a75db4da572e23ddbe",
+          "bytes": 1071
+        },
+        {
+          "path": "groupGame/groupGame/Textures/enemy1.png",
+          "sha": "46a2ce8ff89931c3b1c9ee62d0e2a2fcf68a9a12",
+          "bytes": 878
+        },
+        {
+          "path": "groupGame/groupGame/Textures/enemy2.png",
+          "sha": "db06d5794135630413de376f83220159067f30d5",
+          "bytes": 1081
+        },
+        {
+          "path": "groupGame/groupGame/Textures/enemy3.png",
+          "sha": "8061bd56aa4cff11cdd6ed5a686c773faa9ccdc9",
+          "bytes": 744
+        },
+        {
+          "path": "groupGame/groupGame/Textures/enemy4.png",
+          "sha": "2528fcd8ace1db8e5b6a331890916ddd1e543d85",
+          "bytes": 882
+        },
+        {
+          "path": "groupGame/groupGame/Textures/enemy_bullet.png",
+          "sha": "b4ee28b23531587d0c5f71c26ddb5bb1cdc7ecc3",
+          "bytes": 161
+        },
+        {
+          "path": "groupGame/groupGame/Textures/enemy_bullet_long.png",
+          "sha": "68af96a1982736dd3c752b126f7ea0f2cc65a8fe",
+          "bytes": 140
+        },
+        {
+          "path": "groupGame/groupGame/Textures/hp_upgrade.png",
+          "sha": "54a7ed54696a14178ddea79bbf2d84baed3020fe",
+          "bytes": 1259
+        },
+        {
+          "path": "groupGame/groupGame/Textures/mushroom.png",
+          "sha": "303b567187000adc90683002962e80df4dbfbe39",
+          "bytes": 4031
+        },
+        {
+          "path": "groupGame/groupGame/Textures/player_bullet.png",
+          "sha": "138d14e5057e98ed1e0c249019098cc3755b6c8f",
+          "bytes": 151
+        },
+        {
+          "path": "groupGame/groupGame/Textures/player_ship.png",
+          "sha": "f5afeadf8c34339ca281adfe602d61a61dc3c062",
+          "bytes": 1695
+        },
+        {
+          "path": "groupGame/groupGame/Textures/power_up.png",
+          "sha": "dbe544f4ddd9576d1c814ba71c0eb0b744e1d29d",
+          "bytes": 118325
+        },
+        {
+          "path": "groupGame/groupGame/Textures/space_background.jpg",
+          "sha": "ab9d97e948122577c8cbb45d169d98d800597d2d",
+          "bytes": 109968
+        },
+        {
+          "path": "groupGame/groupGame/Textures/spread_shot.png",
+          "sha": "32a3207762172091d7938d65509389d4b13fdbf1",
+          "bytes": 25483
+        },
+        {
+          "path": "groupGame/groupGame/Textures/star.png",
+          "sha": "caa4621838c9328439868ac9b44a4f28d269d910",
+          "bytes": 2042
+        }
+      ]
+    }
+  ]
+}

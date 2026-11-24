@@ -1,0 +1,44 @@
+[
+  {
+    "caption": "Original mechanism CAD rendering, taken from the archived project demonstration.",
+    "loaded": true,
+    "slug": "smart-curtains",
+    "source": "real/smart-curtains.webp"
+  },
+  {
+    "caption": "Polygon editing and live area calculation in the original recorded demo.",
+    "loaded": true,
+    "slug": "manual-segmentation",
+    "source": "real/manual-seg.webp"
+  },
+  {
+    "caption": "First six seconds of an actual FIFO run. T0 iteration 2 finished at 2.903 s against a 2.000 s deadline.",
+    "loaded": true,
+    "slug": "thread-scheduling",
+    "source": "real/scheduler-cover.svg"
+  },
+  {
+    "caption": "Archived regression plot from the repository. The experiment has not been rerun here.",
+    "loaded": true,
+    "slug": "ml-experiments",
+    "source": "real/carlength_vs_price_regresion_line.png"
+  },
+  {
+    "caption": "Actual Objectron demo frame showing the detected cup and its 3D box.",
+    "loaded": true,
+    "slug": "object-detection",
+    "source": "real/object-detection.webp"
+  },
+  {
+    "caption": "Actual gameplay, extracted at 15 seconds in the original recording.",
+    "loaded": true,
+    "slug": "space-hell",
+    "source": "real/space-hell-gameplay.png"
+  },
+  {
+    "caption": "Original desktop application screenshot.",
+    "loaded": true,
+    "slug": "poker",
+    "source": "real/poker.png"
+  }
+]
